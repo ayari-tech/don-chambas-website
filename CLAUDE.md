@@ -43,6 +43,22 @@ El sitio cubre los campos de la app: Privacy Policy URL → `/privacidad`, Terms
 
 ---
 
+## 1.2 Handoff y archivado
+
+El traspaso detallado de la sesión inicial (qué se hizo, commits, decisiones, estado
+y pendientes) vive en **`docs/HANDOFF.md`**. Léelo al retomar el proyecto.
+
+**Protocolo de archivado:** cuando todos los pendientes de `docs/HANDOFF.md` §4 estén
+cerrados, **archívalo** — no lo borres:
+
+1. Cambia su encabezado `> **Status:** ACTIVO` por `> **Status:** ARCHIVADO (YYYY-MM-DD)`.
+2. Muévelo a `docs/archive/` (ej. `docs/archive/HANDOFF-2026-06.md`).
+3. Quita o actualiza esta sección y `## 1.1` para reflejar el nuevo estado.
+
+Un handoff archivado es registro histórico; el estado vivo siempre se refleja en `## 1.1`.
+
+---
+
 ## 2. Fuentes externas (Notion + Google Drive)
 
 - **Notion** — vía el conector de cuenta claude.ai (`mcp__claude_ai_Notion__*`). PM y documentación del proyecto en las DBs de Don Chambas (IDs y schema en `don-chambas-hq/CLAUDE.md` §3).
