@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { CONTACT_EMAIL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Aviso de Privacidad — Don Chambas",
@@ -8,7 +9,6 @@ export const metadata: Metadata = {
     "Aviso de privacidad de Don Chambas. Conoce cómo tratamos tus datos personales conforme a la LFPDPPP y cómo ejercer tus derechos ARCO.",
 };
 
-const CONTACT_EMAIL = "hola@donchambas.com.mx";
 const LAST_UPDATED = "2026-06-26";
 
 export default function PrivacidadPage() {
@@ -169,7 +169,7 @@ export default function PrivacidadPage() {
             publicitarios.
           </p>
 
-          <h2>5. Derechos ARCO</h2>
+          <h2 id="eliminar-datos">5. Derechos ARCO y eliminación de datos</h2>
           <p>
             Tienes derecho a <strong>Acceder, Rectificar, Cancelar u Oponerte</strong>{" "}
             (derechos ARCO) al tratamiento de tus datos personales. Para

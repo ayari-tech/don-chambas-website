@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import CtaFinal from "@/components/CtaFinal";
+import { whatsapp } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Para Restaurantes — Don Chambas",
@@ -8,47 +11,33 @@ export const metadata: Metadata = {
     "Llena tus vacantes en días, no semanas. Candidatos verificados, comunicación automatizada, ranking de cumplimiento. Únete al programa piloto en CDMX.",
 };
 
-const CONTACT_EMAIL = "hola@donchambas.com.mx";
+const PILOT_MSG =
+  "Hola, me interesa el programa piloto de Don Chambas. Mi restaurante está en CDMX y tenemos más de 5 vacantes al año.";
 
 export default function RestaurantesPage() {
   return (
     <>
       <Nav />
 
-      {/* ── HERO ── */}
-      <div className="hero">
-        <div className="wrap">
-          <span className="eyebrow">Programa piloto · CDMX · 2026</span>
-          <h1>
+      <Hero
+        eyebrow="Programa piloto · CDMX · 2026"
+        title={
+          <>
             Llena tus vacantes en{" "}
             <span className="accent">días, no semanas.</span>
-          </h1>
-          <p className="hero-sub">
-            Candidatos verificados físicamente, con ranking de cumplimiento
-            visible antes de agendar entrevista. Sin perseguir no-shows. Sin
-            prestar tu WhatsApp personal.
-          </p>
-          <div className="hero-ctas">
-            <a
-              href={`mailto:${CONTACT_EMAIL}?subject=Quiero unirme al piloto de Don Chambas&body=Hola, me interesa participar en el programa piloto de Don Chambas. Mi restaurante está en CDMX.`}
-              className="btn btn-primary"
-            >
-              Quiero el piloto — es gratis
-            </a>
-          </div>
-          <div className="hero-meta">
-            <div>
-              <b>Costo del piloto</b> $0 — completamente gratis
-            </div>
-            <div>
-              <b>Duración</b> 60–90 días
-            </div>
-            <div>
-              <b>Post-piloto</b> Tarifa preferencial 12 meses
-            </div>
-          </div>
-        </div>
-      </div>
+          </>
+        }
+        subtitle="Candidatos verificados físicamente, con ranking de cumplimiento visible antes de agendar entrevista. Sin perseguir no-shows. Sin prestar tu WhatsApp personal."
+        meta={[
+          { label: "Costo del piloto", value: "$0 — completamente gratis" },
+          { label: "Duración", value: "60–90 días" },
+          { label: "Post-piloto", value: "Tarifa preferencial 12 meses" },
+        ]}
+      >
+        <a href={whatsapp(PILOT_MSG)} className="btn btn-primary">
+          Quiero el piloto — es gratis
+        </a>
+      </Hero>
 
       {/* ── DOLORES ── */}
       <section className="alt">
@@ -73,8 +62,8 @@ export default function RestaurantesPage() {
               <div className="num">$240</div>
               <h3>Por día en Indeed</h3>
               <p>
-                Pagas y aún así filtraras 100+ mensajes irrelevantes a mano.
-                El tiempo del dueño vale más que eso.
+                Pagas y aún así filtras 100+ mensajes irrelevantes a mano. El
+                tiempo del dueño vale más que eso.
               </p>
             </div>
             <div className="card">
@@ -108,7 +97,7 @@ export default function RestaurantesPage() {
           </p>
           <div className="feature-grid">
             <div className="feature-card">
-              <div className="icon">✓</div>
+              <div className="icon" aria-hidden="true">✓</div>
               <h3>Verificación física del negocio</h3>
               <p>
                 Antes de publicar cualquier vacante, verificamos tu
@@ -117,7 +106,7 @@ export default function RestaurantesPage() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="icon">📊</div>
+              <div className="icon" aria-hidden="true">📊</div>
               <h3>Ranking de cumplimiento</h3>
               <p>
                 Cada candidato tiene un score numérico — asistencias, puntualidad,
@@ -125,7 +114,7 @@ export default function RestaurantesPage() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="icon">💬</div>
+              <div className="icon" aria-hidden="true">💬</div>
               <h3>Chat directo sin WhatsApp personal</h3>
               <p>
                 Comunicación con el candidato desde la plataforma. Sin prestar tu
@@ -133,7 +122,7 @@ export default function RestaurantesPage() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="icon">📋</div>
+              <div className="icon" aria-hidden="true">📋</div>
               <h3>Kanban de candidatos</h3>
               <p>
                 Visualiza tu funnel de reclutamiento: quién aplicó, quién
@@ -141,7 +130,7 @@ export default function RestaurantesPage() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="icon">🤖</div>
+              <div className="icon" aria-hidden="true">🤖</div>
               <h3>Confirmaciones automáticas</h3>
               <p>
                 Recordatorios automáticos antes de entrevista y día de prueba.
@@ -149,7 +138,7 @@ export default function RestaurantesPage() {
               </p>
             </div>
             <div className="feature-card">
-              <div className="icon">🕐</div>
+              <div className="icon" aria-hidden="true">🕐</div>
               <h3>Historial entre empleadores</h3>
               <p>
                 El candidato tiene un historial cruzado entre negocios — no solo
@@ -258,23 +247,19 @@ export default function RestaurantesPage() {
       {/* ── CTA FINAL ── */}
       <section>
         <div className="wrap">
-          <div className="cta-final">
-            <h3>
-              ¿Tu restaurante califica?{" "}
-              <span className="accent">Escríbenos hoy.</span>
-            </h3>
-            <p>
-              Respondemos en menos de 24 horas para agendar una llamada corta
-              de 20 minutos. Sin compromiso. Sin letra chica.
-            </p>
-            <a
-              href={`mailto:${CONTACT_EMAIL}?subject=Quiero unirme al piloto de Don Chambas&body=Hola, me interesa participar en el programa piloto de Don Chambas. Mi restaurante está en CDMX y tenemos más de 5 vacantes al año. Quisiera saber más.`}
-              className="btn btn-primary"
-              style={{ display: "inline-block", marginTop: "var(--sp-5)" }}
-            >
-              Escríbenos para el piloto →
+          <CtaFinal
+            title={
+              <>
+                ¿Tu restaurante califica?{" "}
+                <span className="accent">Escríbenos hoy.</span>
+              </>
+            }
+            description="Respondemos en menos de 24 horas para agendar una llamada corta de 20 minutos. Sin compromiso. Sin letra chica."
+          >
+            <a href={whatsapp(PILOT_MSG)} className="btn btn-primary">
+              Escríbenos por WhatsApp →
             </a>
-          </div>
+          </CtaFinal>
         </div>
       </section>
 

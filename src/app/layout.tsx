@@ -16,6 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://donchambas.com.mx"),
   title: "Don Chambas — Reclutamiento WhatsApp-first para restaurantes",
   description:
     "Don Chambas conecta negocios de servicio con candidatos verificados en México, usando WhatsApp como canal principal. Piloto disponible en CDMX.",
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
       "Reclutamiento WhatsApp-first para negocios de servicio en México.",
     locale: "es_MX",
     type: "website",
+    siteName: "Don Chambas",
   },
 };
 

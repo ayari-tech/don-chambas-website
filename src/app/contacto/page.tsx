@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { CONTACT_EMAIL, mailto, whatsapp } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Contacto — Don Chambas",
@@ -8,7 +9,8 @@ export const metadata: Metadata = {
     "Contáctanos para unirte al piloto de Don Chambas, información para inversionistas o cualquier duda sobre la plataforma.",
 };
 
-const CONTACT_EMAIL = "hola@donchambas.com.mx";
+const PILOT_MSG =
+  "Hola, me interesa el programa piloto de Don Chambas. Mi restaurante está en CDMX.";
 
 export default function ContactoPage() {
   return (
@@ -62,27 +64,19 @@ export default function ContactoPage() {
 
                 <dt>Para restaurantes — piloto</dt>
                 <dd>
-                  <a
-                    href={`mailto:${CONTACT_EMAIL}?subject=Quiero unirme al piloto de Don Chambas`}
-                  >
-                    Escríbenos con asunto "Piloto"
-                  </a>
+                  <a href={whatsapp(PILOT_MSG)}>Escríbenos por WhatsApp</a>
                 </dd>
 
                 <dt>Para inversionistas</dt>
                 <dd>
-                  <a
-                    href={`mailto:${CONTACT_EMAIL}?subject=Interés en Don Chambas - Inversionista`}
-                  >
+                  <a href={mailto("Interés en Don Chambas - Inversionista")}>
                     Escríbenos con asunto "Inversionista"
                   </a>
                 </dd>
 
                 <dt>Derechos ARCO (privacidad)</dt>
                 <dd>
-                  <a
-                    href={`mailto:${CONTACT_EMAIL}?subject=Ejercicio de derechos ARCO`}
-                  >
+                  <a href={mailto("Ejercicio de derechos ARCO")}>
                     Escríbenos con asunto "Derechos ARCO"
                   </a>
                 </dd>
@@ -96,10 +90,7 @@ export default function ContactoPage() {
             </div>
 
             <div>
-              <div
-                className="card"
-                style={{ marginBottom: "var(--sp-5)" }}
-              >
+              <div className="card" style={{ marginBottom: "var(--sp-5)" }}>
                 <h3>¿Tienes un restaurante en CDMX?</h3>
                 <p>
                   Buscamos 10 negocios para nuestro programa piloto. Uso
@@ -107,11 +98,11 @@ export default function ContactoPage() {
                   preferencial post-piloto.
                 </p>
                 <a
-                  href={`mailto:${CONTACT_EMAIL}?subject=Quiero unirme al piloto de Don Chambas&body=Hola, me interesa participar en el programa piloto de Don Chambas. Mi restaurante está en CDMX.`}
+                  href={whatsapp(PILOT_MSG)}
                   className="btn btn-primary"
                   style={{ display: "inline-block", marginTop: "var(--sp-4)" }}
                 >
-                  Únete al piloto →
+                  Únete al piloto por WhatsApp →
                 </a>
               </div>
 
@@ -122,7 +113,7 @@ export default function ContactoPage() {
                   en una llamada confidencial de 30 minutos.
                 </p>
                 <a
-                  href={`mailto:${CONTACT_EMAIL}?subject=Interés en Don Chambas - Inversionista`}
+                  href={mailto("Interés en Don Chambas - Inversionista")}
                   className="btn btn-blue"
                   style={{ display: "inline-block", marginTop: "var(--sp-4)" }}
                 >

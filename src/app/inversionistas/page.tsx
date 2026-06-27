@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import FlowSteps from "@/components/FlowSteps";
+import MoatCard from "@/components/MoatCard";
+import CtaFinal from "@/components/CtaFinal";
+import { mailto } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Inversionistas — Don Chambas",
@@ -9,47 +13,32 @@ export const metadata: Metadata = {
     "Don Chambas: la plataforma WhatsApp-first de reclutamiento para restaurantes en México con moat fintech. Conoce el modelo de negocio, los tres moats y el equipo.",
 };
 
-const CONTACT_EMAIL = "hola@donchambas.com.mx";
+const INVESTOR_SUBJECT = "Interés en Don Chambas - Inversionista";
 
 export default function InversionistasPage() {
   return (
     <>
       <Nav />
 
-      {/* ── HERO INVESTOR ── */}
-      <div className="hero">
-        <div className="wrap">
-          <span className="eyebrow">Pitch · Confidencial · 2026</span>
-          <h1>
+      <Hero
+        eyebrow="Pitch · Confidencial · 2026"
+        title={
+          <>
             Una plataforma de reclutamiento.{" "}
             <span className="accent">La primera</span> de una empresa AI-first.
-          </h1>
-          <p className="hero-sub">
-            Don Chambas resuelve el problema de comunicación bilateral en el
-            reclutamiento del sector servicio en México — y construye el dataset
-            propietario para un moat fintech defensible.
-          </p>
-          <div className="hero-ctas">
-            <a
-              href={`mailto:${CONTACT_EMAIL}?subject=Interés en Don Chambas - Inversionista`}
-              className="btn btn-primary"
-            >
-              Agendar llamada
-            </a>
-          </div>
-          <div className="hero-meta">
-            <div>
-              <b>Mercado objetivo</b> ~42M trabajadores operativos MX
-            </div>
-            <div>
-              <b>Vertical inicial</b> Restaurantería CDMX
-            </div>
-            <div>
-              <b>Fase actual</b> Diseño de producto — piloto Q3 2026
-            </div>
-          </div>
-        </div>
-      </div>
+          </>
+        }
+        subtitle="Don Chambas resuelve el problema de comunicación bilateral en el reclutamiento del sector servicio en México — y construye el dataset propietario para un moat fintech defensible."
+        meta={[
+          { label: "Mercado objetivo", value: "~42M trabajadores operativos MX" },
+          { label: "Vertical inicial", value: "Restaurantería CDMX" },
+          { label: "Fase actual", value: "Diseño de producto — piloto Q3 2026" },
+        ]}
+      >
+        <a href={mailto(INVESTOR_SUBJECT)} className="btn btn-primary">
+          Agendar llamada
+        </a>
+      </Hero>
 
       {/* ── MERCADO ── */}
       <section className="alt">
@@ -129,38 +118,7 @@ export default function InversionistasPage() {
             WhatsApp como canal primario porque ya es la herramienta cultural del
             segmento NSE C/D operativo. Sin migración de usuario.
           </p>
-          <div className="flow">
-            <div className="step">
-              <div className="step-num">01</div>
-              <strong>Registro WA</strong>
-              <p>Sin app. Agente IA arma el perfil del candidato.</p>
-            </div>
-            <div className="step">
-              <div className="step-num">02</div>
-              <strong>Perfil con IA</strong>
-              <p>CV generado por conversación de texto o voz.</p>
-            </div>
-            <div className="step">
-              <div className="step-num">03</div>
-              <strong>Vacantes ordenadas</strong>
-              <p>Por cercanía real (transporte público + turno).</p>
-            </div>
-            <div className="step">
-              <div className="step-num">04</div>
-              <strong>Aplicar 1-tap</strong>
-              <p>El negocio ve el ranking antes de agendar.</p>
-            </div>
-            <div className="step">
-              <div className="step-num">05</div>
-              <strong>Confirmar 1-tap</strong>
-              <p>Recordatorios y confirmaciones automáticas.</p>
-            </div>
-            <div className="step">
-              <div className="step-num">06</div>
-              <strong>Contratar</strong>
-              <p>Día de prueba pagado. Backoffice resuelve disputas.</p>
-            </div>
-          </div>
+          <FlowSteps />
         </div>
       </section>
 
@@ -170,61 +128,43 @@ export default function InversionistasPage() {
           <p className="section-tag">Ventajas defensibles</p>
           <h2>Tres moats. Ningún competidor los tiene hoy.</h2>
 
-          <div className="moat">
-            <div className="moat-head">
-              <h3>Ranking del candidato</h3>
-              <span className="id">MOAT 1 · DEC-013</span>
-            </div>
-            <div className="body">
-              <p>
-                Score numérico de cumplimiento — asistencia, llegada, permanencia.
-                Sin reviews abiertas. El negocio ve el dato <b>antes</b> de
-                agendar entrevista.
-              </p>
-              <p>
-                <b>Por qué es defensible:</b> requiere flujo operativo cerrado
-                (no solo agregar un campo). Crea el dataset propietario para
-                underwriting de crédito (moat fintech).
-              </p>
-            </div>
-          </div>
+          <MoatCard title="Ranking del candidato" badge="MOAT 1 · DEC-013">
+            <p>
+              Score numérico de cumplimiento — asistencia, llegada, permanencia.
+              Sin reviews abiertas. El negocio ve el dato <b>antes</b> de agendar
+              entrevista.
+            </p>
+            <p>
+              <b>Por qué es defensible:</b> requiere flujo operativo cerrado (no
+              solo agregar un campo). Crea el dataset propietario para
+              underwriting de crédito (moat fintech).
+            </p>
+          </MoatCard>
 
-          <div className="moat">
-            <div className="moat-head">
-              <h3>Verificación física del negocio</h3>
-              <span className="id">MOAT 2 · DEC-012</span>
-            </div>
-            <div className="body">
-              <p>
-                Visita física obligatoria al establecimiento. Outsourced a
-                partner (modelo Hireright MX). Renovación anual.
-              </p>
-              <p>
-                <b>Por qué es defensible:</b> Facebook Groups y Computrabajo no
-                verifican. Indeed/OCC solo verifican domicilio fiscal. La visita
-                física detecta el patrón "negocio fantasma" que los demás no ven.
-              </p>
-            </div>
-          </div>
+          <MoatCard title="Verificación física del negocio" badge="MOAT 2 · DEC-012">
+            <p>
+              Visita física obligatoria al establecimiento. Outsourced a partner
+              (modelo Hireright MX). Renovación anual.
+            </p>
+            <p>
+              <b>Por qué es defensible:</b> Facebook Groups y Computrabajo no
+              verifican. Indeed/OCC solo verifican domicilio fiscal. La visita
+              física detecta el patrón "negocio fantasma" que los demás no ven.
+            </p>
+          </MoatCard>
 
-          <div className="moat">
-            <div className="moat-head">
-              <h3>Reducción bilateral de fricción</h3>
-              <span className="id">MOAT 3 · DEC-021</span>
-            </div>
-            <div className="body">
-              <p>
-                Bot WA absorbe preguntas frecuentes. Confirmaciones 1-tap,
-                recordatorios automáticos. Voz como modalidad de primera clase.
-              </p>
-              <p>
-                <b>Por qué es defensible:</b> Chambas AI solo hace pre-filtro;
-                el negocio sigue cargando con confirmaciones. Nadie automatiza
-                el flujo bilateral end-to-end. Ventaja estructural, no feature
-                replicable rápido.
-              </p>
-            </div>
-          </div>
+          <MoatCard title="Reducción bilateral de fricción" badge="MOAT 3 · DEC-021">
+            <p>
+              Bot WA absorbe preguntas frecuentes. Confirmaciones 1-tap,
+              recordatorios automáticos. Voz como modalidad de primera clase.
+            </p>
+            <p>
+              <b>Por qué es defensible:</b> Chambas AI solo hace pre-filtro; el
+              negocio sigue cargando con confirmaciones. Nadie automatiza el flujo
+              bilateral end-to-end. Ventaja estructural, no feature replicable
+              rápido.
+            </p>
+          </MoatCard>
         </div>
       </section>
 
@@ -309,9 +249,7 @@ export default function InversionistasPage() {
       <section>
         <div className="wrap">
           <p className="section-tag">Posicionamiento competitivo</p>
-          <h2>
-            WhatsApp-first, verificado, ranking transparente.
-          </h2>
+          <h2>WhatsApp-first, verificado, ranking transparente.</h2>
           <p className="lead">
             Para el sector que Indeed/OCC ignoran y que Facebook Groups no
             protege.
@@ -521,23 +459,19 @@ export default function InversionistasPage() {
               </p>
             </div>
           </div>
-          <div className="cta-final" style={{ marginTop: "var(--sp-10)" }}>
-            <h3>
-              ¿Quieres saber más?{" "}
-              <span className="accent">Hablemos.</span>
-            </h3>
-            <p>
-              Compartimos el pitch completo, proyecciones y unit economics en
-              una llamada confidencial de 30 minutos.
-            </p>
-            <a
-              href={`mailto:${CONTACT_EMAIL}?subject=Interés en Don Chambas - Inversionista`}
-              className="btn btn-primary"
-              style={{ display: "inline-block", marginTop: "var(--sp-5)" }}
-            >
+          <CtaFinal
+            title={
+              <>
+                ¿Quieres saber más? <span className="accent">Hablemos.</span>
+              </>
+            }
+            description="Compartimos el pitch completo, proyecciones y unit economics en una llamada confidencial de 30 minutos."
+            style={{ marginTop: "var(--sp-10)" }}
+          >
+            <a href={mailto(INVESTOR_SUBJECT)} className="btn btn-primary">
               Agendar llamada →
             </a>
-          </div>
+          </CtaFinal>
         </div>
       </section>
 

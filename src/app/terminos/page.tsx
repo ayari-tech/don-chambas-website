@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { CONTACT_EMAIL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Términos de Uso — Don Chambas",
@@ -8,7 +9,6 @@ export const metadata: Metadata = {
     "Términos y condiciones de uso de la plataforma Don Chambas para candidatos y negocios de servicio en México.",
 };
 
-const CONTACT_EMAIL = "hola@donchambas.com.mx";
 const LAST_UPDATED = "2026-06-26";
 
 export default function TerminosPage() {

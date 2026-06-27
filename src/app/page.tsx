@@ -3,6 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import FlowSteps from "@/components/FlowSteps";
+import MoatCard from "@/components/MoatCard";
+import CtaFinal from "@/components/CtaFinal";
+import { whatsapp } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Don Chambas — Reclutamiento WhatsApp-first para restaurantes en México",
@@ -10,52 +15,37 @@ export const metadata: Metadata = {
     "Don Chambas conecta negocios de servicio con candidatos verificados, usando WhatsApp como canal principal. Candidatos rankeados, negocios verificados físicamente, comunicación automatizada.",
 };
 
-const CONTACT_EMAIL = "hola@donchambas.com.mx";
+const PILOT_MSG =
+  "Hola, me interesa el programa piloto de Don Chambas. Mi restaurante está en CDMX.";
 
 export default function LandingPage() {
   return (
     <>
       <Nav />
 
-      {/* ── HERO ── */}
-      <div className="hero">
-        <div className="wrap">
-          <span className="eyebrow">Piloto · CDMX · 2026</span>
-          <h1>
-            Reclutamiento{" "}
-            <span className="accent">WhatsApp-first</span>{" "}
-            para negocios de servicio en México.
-          </h1>
-          <p className="hero-sub">
-            Candidatos verificados, ranking de cumplimiento, comunicación
-            automatizada end-to-end. La plataforma hace el trabajo; tú no.
-          </p>
-          <p>
-            <span className="dc-tagline">
-              ¿Buscas jale o quien jale pa´ tu restaurante?
-            </span>
-          </p>
-          <div className="hero-ctas">
-            <Link href="/restaurantes#piloto" className="btn btn-primary">
-              Soy restaurante — quiero el piloto
-            </Link>
-            <Link href="/inversionistas" className="btn btn-outline">
-              Soy inversionista
-            </Link>
-          </div>
-          <div className="hero-meta">
-            <div>
-              <b>Empezamos en</b> Restaurantería CDMX
-            </div>
-            <div>
-              <b>Escalamos a</b> Cafés · Bares · Hoteles · Retail
-            </div>
-            <div>
-              <b>Visión fintech</b> Nómina · Préstamos · Caja de ahorro
-            </div>
-          </div>
-        </div>
-      </div>
+      <Hero
+        eyebrow="Piloto · CDMX · 2026"
+        title={
+          <>
+            Reclutamiento <span className="accent">WhatsApp-first</span> para
+            negocios de servicio en México.
+          </>
+        }
+        subtitle="Candidatos verificados, ranking de cumplimiento, comunicación automatizada end-to-end. La plataforma hace el trabajo; tú no."
+        tagline
+        meta={[
+          { label: "Empezamos en", value: "Restaurantería CDMX" },
+          { label: "Escalamos a", value: "Cafés · Bares · Hoteles · Retail" },
+          { label: "Visión fintech", value: "Nómina · Préstamos · Caja de ahorro" },
+        ]}
+      >
+        <a href={whatsapp(PILOT_MSG)} className="btn btn-primary">
+          Soy restaurante — quiero el piloto
+        </a>
+        <Link href="/inversionistas" className="btn btn-outline">
+          Soy inversionista
+        </Link>
+      </Hero>
 
       {/* ── PROBLEMA ── */}
       <section id="problema" className="alt">
@@ -123,38 +113,7 @@ export default function LandingPage() {
             ordenadas por cercanía real y turno. Aplica 1-tap. El negocio decide
             con datos — no con fe.
           </p>
-          <div className="flow">
-            <div className="step">
-              <div className="step-num">01</div>
-              <strong>Registro WA</strong>
-              <p>Sin app. El candidato entra por WhatsApp y el agente IA le arma su perfil.</p>
-            </div>
-            <div className="step">
-              <div className="step-num">02</div>
-              <strong>Perfil con IA</strong>
-              <p>Conversación de texto o voz. CV generado sin que el candidato escriba un formato.</p>
-            </div>
-            <div className="step">
-              <div className="step-num">03</div>
-              <strong>Vacantes ordenadas</strong>
-              <p>Por cercanía real (transporte público a ese turno), no solo por código postal.</p>
-            </div>
-            <div className="step">
-              <div className="step-num">04</div>
-              <strong>Aplicar 1-tap</strong>
-              <p>El candidato aplica en un toque. El negocio ve su ranking antes de agendar.</p>
-            </div>
-            <div className="step">
-              <div className="step-num">05</div>
-              <strong>Confirmar 1-tap</strong>
-              <p>Recordatorios automáticos. Sin perseguir. El bot absorbe las preguntas.</p>
-            </div>
-            <div className="step">
-              <div className="step-num">06</div>
-              <strong>Contratar</strong>
-              <p>Día de prueba pagado vía Don Chambas. Backoffice humano resuelve disputas.</p>
-            </div>
-          </div>
+          <FlowSteps />
 
           <h3 style={{ marginTop: "var(--sp-12)" }}>
             Lo que el usuario nunca tiene que hacer
@@ -200,66 +159,46 @@ export default function LandingPage() {
             que Indeed ignora y que Facebook Groups no protege.
           </p>
 
-          <div className="moat">
-            <div className="moat-head">
-              <h3>Ranking del candidato</h3>
-              <span className="id">MOAT 1 · DEC-013</span>
-            </div>
-            <div className="body">
-              <p>
-                Score numérico de cumplimiento — asistencia a entrevistas,
-                llegada al primer día de prueba, permanencia semana 1.{" "}
-                <b>Sin reviews abiertas.</b> Comentarios cualitativos son
-                privados. El negocio ve el número <b>antes</b> de agendar.
-              </p>
-              <p>
-                Ningún competidor lo ofrece. Construirlo requiere flujo
-                operativo cerrado, no solo agregar un campo. Es también la base
-                del moat fintech futuro (underwriting de crédito).
-              </p>
-            </div>
-          </div>
+          <MoatCard title="Ranking del candidato" badge="MOAT 1 · DEC-013">
+            <p>
+              Score numérico de cumplimiento — asistencia a entrevistas, llegada
+              al primer día de prueba, permanencia semana 1. <b>Sin reviews
+              abiertas.</b> Comentarios cualitativos son privados. El negocio ve
+              el número <b>antes</b> de agendar.
+            </p>
+            <p>
+              Ningún competidor lo ofrece. Construirlo requiere flujo operativo
+              cerrado, no solo agregar un campo. Es también la base del moat
+              fintech futuro (underwriting de crédito).
+            </p>
+          </MoatCard>
 
-          <div className="moat">
-            <div className="moat-head">
-              <h3>Verificación física del negocio</h3>
-              <span className="id">MOAT 2 · DEC-012</span>
-            </div>
-            <div className="body">
-              <p>
-                Visita física obligatoria al establecimiento antes de publicar
-                vacantes. Outsourced a partner externo (modelo Hireright MX).
-                Renovación anual. El "depósito de uniforme" de Facebook Groups{" "}
-                <b>deja de ser posible.</b>
-              </p>
-              <p>
-                Facebook Groups y Computrabajo no verifican. Indeed/OCC
-                verifican domicilio fiscal — no que la operación sea real. La
-                visita física es la única barrera que detecta el patrón "negocio
-                fantasma".
-              </p>
-            </div>
-          </div>
+          <MoatCard title="Verificación física del negocio" badge="MOAT 2 · DEC-012">
+            <p>
+              Visita física obligatoria al establecimiento antes de publicar
+              vacantes. Outsourced a partner externo (modelo Hireright MX).
+              Renovación anual. El "depósito de uniforme" de Facebook Groups{" "}
+              <b>deja de ser posible.</b>
+            </p>
+            <p>
+              Facebook Groups y Computrabajo no verifican. Indeed/OCC verifican
+              domicilio fiscal — no que la operación sea real. La visita física
+              es la única barrera que detecta el patrón "negocio fantasma".
+            </p>
+          </MoatCard>
 
-          <div className="moat">
-            <div className="moat-head">
-              <h3>Reducción bilateral de fricción</h3>
-              <span className="id">MOAT 3 · DEC-021</span>
-            </div>
-            <div className="body">
-              <p>
-                Bot WA absorbe preguntas frecuentes. Confirmaciones 1-tap,
-                recordatorios automáticos, templates precargados. Voz como
-                modalidad de primera clase — WA voice + llamada + push-to-talk.
-              </p>
-              <p>
-                Indeed manda email. Facebook Groups no estructura nada. Chambas
-                AI hace pre-filtro pero el negocio sigue cargando con
-                confirmaciones manuales.{" "}
-                <b>Nadie automatiza el flujo bilateral end-to-end.</b>
-              </p>
-            </div>
-          </div>
+          <MoatCard title="Reducción bilateral de fricción" badge="MOAT 3 · DEC-021">
+            <p>
+              Bot WA absorbe preguntas frecuentes. Confirmaciones 1-tap,
+              recordatorios automáticos, templates precargados. Voz como
+              modalidad de primera clase — WA voice + llamada + push-to-talk.
+            </p>
+            <p>
+              Indeed manda email. Facebook Groups no estructura nada. Chambas AI
+              hace pre-filtro pero el negocio sigue cargando con confirmaciones
+              manuales. <b>Nadie automatiza el flujo bilateral end-to-end.</b>
+            </p>
+          </MoatCard>
         </div>
       </section>
 
@@ -332,6 +271,7 @@ export default function LandingPage() {
               gridTemplateColumns: "1fr 1fr",
               gap: "var(--sp-10)",
             }}
+            className="grid two"
           >
             <div>
               <h3>¿Qué busca Don Chambas en un negocio piloto?</h3>
@@ -355,23 +295,19 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="cta-final">
-            <h3>
-              ¿Tu restaurante califica?{" "}
-              <span className="accent">Escríbenos.</span>
-            </h3>
-            <p>
-              Responderemos en menos de 24 horas para agendar una llamada corta
-              y confirmar si el piloto es el siguiente paso correcto.
-            </p>
-            <a
-              href={`mailto:${CONTACT_EMAIL}?subject=Quiero unirme al piloto de Don Chambas&body=Hola, me interesa participar en el programa piloto. Mi restaurante está en CDMX y tenemos más de 5 vacantes al año.`}
-              className="btn btn-primary"
-              style={{ display: "inline-block", marginTop: "var(--sp-5)" }}
-            >
-              Contáctanos para el piloto →
+          <CtaFinal
+            title={
+              <>
+                ¿Tu restaurante califica?{" "}
+                <span className="accent">Escríbenos por WhatsApp.</span>
+              </>
+            }
+            description="Respondemos en menos de 24 horas para agendar una llamada corta y confirmar si el piloto es el siguiente paso correcto."
+          >
+            <a href={whatsapp(PILOT_MSG)} className="btn btn-primary">
+              Escríbenos por WhatsApp →
             </a>
-          </div>
+          </CtaFinal>
         </div>
       </section>
 
