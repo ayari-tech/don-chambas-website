@@ -49,7 +49,7 @@ export default function OpengraphImage() {
           }}
         >
           <span>Resolvemos la&nbsp;</span>
-          <span style={{ color: "#F49F08" }}>fricción de comunicación&nbsp;</span>
+          <span style={{ color: "#F49F08" }}>fricción&nbsp;</span>
           <span>en el reclutamiento para negocios de servicio.</span>
         </div>
 

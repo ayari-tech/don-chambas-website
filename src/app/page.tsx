@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Don Chambas — Reclutamiento para negocios de servicio en México",
   description:
-    "Don Chambas resuelve la fricción de comunicación en el reclutamiento para negocios de servicio en México.",
+    "Don Chambas hace que la comunicación entre negocios y candidatos fluya sin fricciones, en el reclutamiento para negocios de servicio en México.",
 };
 
 export default function LandingPage() {
@@ -17,13 +17,12 @@ export default function LandingPage() {
       <div className="hero center">
         <div className="wrap">
           <h1>
-            Resolvemos la <span className="accent">fricción de comunicación</span>{" "}
-            en el reclutamiento para negocios de servicio.
+            Resolvemos la <span className="accent">fricción</span> en el
+            reclutamiento para negocios de servicio.
           </h1>
           <p className="hero-sub">
-            Contratar se traba en mensajes sin responder, confirmaciones que no
-            llegan y citas que se caen. Don Chambas hace que la comunicación
-            entre negocios y candidatos por fin fluya.
+            Don Chambas hace que la comunicación entre negocios y candidatos
+            fluya sin fricciones.
           </p>
           <div className="hero-ctas">
             <Link href="/contacto" className="btn btn-primary">
