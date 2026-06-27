@@ -5,14 +5,13 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import FlowSteps from "@/components/FlowSteps";
-import MoatCard from "@/components/MoatCard";
 import CtaFinal from "@/components/CtaFinal";
 import { whatsapp } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Don Chambas — Reclutamiento WhatsApp-first para restaurantes en México",
   description:
-    "Don Chambas conecta negocios de servicio con candidatos verificados, usando WhatsApp como canal principal. Candidatos rankeados, negocios verificados físicamente, comunicación automatizada.",
+    "Don Chambas conecta negocios de servicio con candidatos verificados, usando WhatsApp como canal principal. Comunicación automatizada y un proceso que sí llega a la contratación.",
 };
 
 const PILOT_MSG =
@@ -31,19 +30,18 @@ export default function LandingPage() {
             negocios de servicio en México.
           </>
         }
-        subtitle="Candidatos verificados, ranking de cumplimiento, comunicación automatizada end-to-end. La plataforma hace el trabajo; tú no."
+        subtitle="Candidatos verificados, comunicación automatizada y un proceso que de verdad llega a la contratación. La plataforma hace el trabajo; tú no."
         tagline
         meta={[
           { label: "Empezamos en", value: "Restaurantería CDMX" },
           { label: "Escalamos a", value: "Cafés · Bares · Hoteles · Retail" },
-          { label: "Visión fintech", value: "Nómina · Préstamos · Caja de ahorro" },
         ]}
       >
         <a href={whatsapp(PILOT_MSG)} className="btn btn-primary">
-          Soy restaurante — quiero el piloto
+          Quiero el piloto
         </a>
-        <Link href="/inversionistas" className="btn btn-outline">
-          Soy inversionista
+        <Link href="/restaurantes" className="btn btn-outline">
+          Soy restaurante
         </Link>
       </Hero>
 
@@ -149,67 +147,14 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── MOATS ── */}
-      <section id="moats" className="dark">
-        <div className="wrap">
-          <p className="section-tag">Ventajas estructurales</p>
-          <h2>Tres moats que ningún competidor tiene hoy.</h2>
-          <p className="lead">
-            WhatsApp-first, verificado, ranking transparente — para el sector
-            que Indeed ignora y que Facebook Groups no protege.
-          </p>
-
-          <MoatCard title="Ranking del candidato" badge="MOAT 1 · DEC-013">
-            <p>
-              Score numérico de cumplimiento — asistencia a entrevistas, llegada
-              al primer día de prueba, permanencia semana 1. <b>Sin reviews
-              abiertas.</b> Comentarios cualitativos son privados. El negocio ve
-              el número <b>antes</b> de agendar.
-            </p>
-            <p>
-              Ningún competidor lo ofrece. Construirlo requiere flujo operativo
-              cerrado, no solo agregar un campo. Es también la base del moat
-              fintech futuro (underwriting de crédito).
-            </p>
-          </MoatCard>
-
-          <MoatCard title="Verificación física del negocio" badge="MOAT 2 · DEC-012">
-            <p>
-              Visita física obligatoria al establecimiento antes de publicar
-              vacantes. Outsourced a partner externo (modelo Hireright MX).
-              Renovación anual. El "depósito de uniforme" de Facebook Groups{" "}
-              <b>deja de ser posible.</b>
-            </p>
-            <p>
-              Facebook Groups y Computrabajo no verifican. Indeed/OCC verifican
-              domicilio fiscal — no que la operación sea real. La visita física
-              es la única barrera que detecta el patrón "negocio fantasma".
-            </p>
-          </MoatCard>
-
-          <MoatCard title="Reducción bilateral de fricción" badge="MOAT 3 · DEC-021">
-            <p>
-              Bot WA absorbe preguntas frecuentes. Confirmaciones 1-tap,
-              recordatorios automáticos, templates precargados. Voz como
-              modalidad de primera clase — WA voice + llamada + push-to-talk.
-            </p>
-            <p>
-              Indeed manda email. Facebook Groups no estructura nada. Chambas AI
-              hace pre-filtro pero el negocio sigue cargando con confirmaciones
-              manuales. <b>Nadie automatiza el flujo bilateral end-to-end.</b>
-            </p>
-          </MoatCard>
-        </div>
-      </section>
-
       {/* ── PRODUCTO ── */}
       <section id="producto" className="alt">
         <div className="wrap">
           <p className="section-tag">El producto</p>
-          <h2>Wireframes hi-fi v0 — 29 historias de usuario.</h2>
+          <h2>Así se ve.</h2>
           <p className="lead">
             Diseño validado con propietarios de restaurantes reales en CDMX.
-            Estas tres pantallas resumen la experiencia candidato + negocio.
+            Toda la experiencia del candidato vive en WhatsApp.
           </p>
           <div className="screens">
             <div className="screen">
@@ -222,7 +167,7 @@ export default function LandingPage() {
               />
               <div className="screen-label">
                 <b>Registro sin app</b>
-                <span>HU-C01 · WhatsApp</span>
+                <span>Por WhatsApp</span>
               </div>
             </div>
             <div className="screen">
@@ -234,21 +179,21 @@ export default function LandingPage() {
                 style={{ width: "100%", height: "auto" }}
               />
               <div className="screen-label">
-                <b>Vacantes por cercanía</b>
-                <span>HU-C06 · PWA</span>
+                <b>Vacantes cercanas</b>
+                <span>En tu celular</span>
               </div>
             </div>
             <div className="screen">
               <Image
-                src="/images/wireframes/hu-r06-kanban-ranking.png"
-                alt="Kanban del negocio con ranking visible"
+                src="/images/wireframes/hu-c07-aplicar-1tap.png"
+                alt="Aplicar a una vacante con un solo toque"
                 width={400}
                 height={700}
                 style={{ width: "100%", height: "auto" }}
               />
               <div className="screen-label">
-                <b>Kanban rankeado</b>
-                <span>HU-R06 · Desktop · moat 1+3</span>
+                <b>Aplicar en un toque</b>
+                <span>Sin formularios</span>
               </div>
             </div>
           </div>
@@ -265,14 +210,7 @@ export default function LandingPage() {
             preferencial por 12 meses al terminar.
           </p>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "var(--sp-10)",
-            }}
-            className="grid two"
-          >
+          <div className="grid two">
             <div>
               <h3>¿Qué busca Don Chambas en un negocio piloto?</h3>
               <ul className="criteria-list">
@@ -289,7 +227,7 @@ export default function LandingPage() {
                 <li>✓ Uso completamente gratis</li>
                 <li>✓ Soporte directo del equipo fundador</li>
                 <li>✓ Tarifa preferencial 12 meses post-piloto</li>
-                <li>✓ Candidatos verificados y rankeados</li>
+                <li>✓ Candidatos verificados</li>
                 <li>✓ Comunicación automatizada</li>
               </ul>
             </div>
@@ -340,40 +278,6 @@ export default function LandingPage() {
               <p>
                 Go-to-market, relaciones institucionales y expansión. Red
                 CANIRAC y escuelas de gastronomía.
-              </p>
-            </div>
-          </div>
-          <div className="grid four" style={{ marginTop: "var(--sp-8)" }}>
-            <div className="card">
-              <div className="num">35+</div>
-              <h3>Decisiones documentadas</h3>
-              <p>
-                Con rationale y contexto. Trazabilidad completa de cada elección
-                de producto.
-              </p>
-            </div>
-            <div className="card">
-              <div className="num">36</div>
-              <h3>HUs canónicas</h3>
-              <p>
-                Historias de usuario cortadas a MVP v0, con criterios de
-                aceptación.
-              </p>
-            </div>
-            <div className="card">
-              <div className="num">29</div>
-              <h3>Wireframes hi-fi</h3>
-              <p>
-                Producidos y validados con propietarios de restaurantes reales en
-                CDMX.
-              </p>
-            </div>
-            <div className="card">
-              <div className="num">8 sem</div>
-              <h3>De README a diseño</h3>
-              <p>
-                De concepto a wireframes hi-fi validados en menos de 8 semanas de
-                trabajo concentrado.
               </p>
             </div>
           </div>

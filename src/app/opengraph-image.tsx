@@ -94,7 +94,7 @@ export default function OpengraphImage() {
         >
           <span>Candidatos verificados</span>
           <span>·</span>
-          <span>Ranking de cumplimiento</span>
+          <span>Comunicación automatizada</span>
           <span>·</span>
           <span>Piloto CDMX 2026</span>
         </div>

@@ -109,8 +109,8 @@ export default function ContactoPage() {
               <div className="card">
                 <h3>¿Eres inversionista?</h3>
                 <p>
-                  Compartimos el pitch completo, proyecciones y unit economics
-                  en una llamada confidencial de 30 minutos.
+                  Escríbenos y agendamos una llamada para compartirte la
+                  información relevante de forma directa.
                 </p>
                 <a
                   href={mailto("Interés en Don Chambas - Inversionista")}

@@ -7,10 +7,9 @@ import Image from "next/image";
 const LINKS = [
   { href: "/#problema", label: "Problema" },
   { href: "/#solucion", label: "Solución" },
-  { href: "/#moats", label: "Moats" },
   { href: "/#producto", label: "Producto" },
   { href: "/restaurantes", label: "Restaurantes" },
-  { href: "/inversionistas", label: "Inversionistas" },
+  { href: "/contacto", label: "Contacto" },
 ];
 
 export default function Nav() {
@@ -44,9 +43,6 @@ export default function Nav() {
             <Link href="/restaurantes#piloto" className="btn btn-primary">
               Únete al piloto
             </Link>
-            <Link href="/inversionistas" className="btn btn-outline">
-              Inversionistas
-            </Link>
           </div>
 
           <button
@@ -75,13 +71,6 @@ export default function Nav() {
               onClick={() => setOpen(false)}
             >
               Únete al piloto
-            </Link>
-            <Link
-              href="/contacto"
-              className="btn btn-outline"
-              onClick={() => setOpen(false)}
-            >
-              Contacto
             </Link>
           </div>
         )}
