@@ -14,7 +14,7 @@ export default function Nav() {
           </Link>
           <div className="nav-links">
             <Link href="/piloto">Programa piloto</Link>
-            <Link href="/carreras">Carreras</Link>
+            <Link href="/carreras">Construye con nosotros</Link>
             <Link href="/contacto">Contacto</Link>
           </div>
         </div>
