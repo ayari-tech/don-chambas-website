@@ -1,0 +1,34 @@
+import type { CSSProperties } from "react";
+
+/**
+ * Destello "+" de marca (estrella de 4 puntas cóncava).
+ * Usado como acento decorativo alrededor del wordmark y en el hero.
+ */
+export default function Sparkle({
+  size = 28,
+  color = "var(--dc-orange)",
+  className,
+  style,
+}: {
+  size?: number;
+  color?: string;
+  className?: string;
+  style?: CSSProperties;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      aria-hidden="true"
+      focusable="false"
+      className={className}
+      style={style}
+    >
+      <path
+        d="M50 0 C54 30 70 46 100 50 C70 54 54 70 50 100 C46 70 30 54 0 50 C30 46 46 30 50 0 Z"
+        fill={color}
+      />
+    </svg>
+  );
+}

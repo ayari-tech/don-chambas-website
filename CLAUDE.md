@@ -20,13 +20,20 @@ Para contexto completo de negocio, decisiones de producto, wireframes y branding
 El sitio se redujo a propósito a una **pantalla de presentación** + legales, para **no dar información que sirva de inspiración a competidores**. Lo sensible (moats, modelo de pricing, trayectoria fintech, roadmap, pasos del producto, screenshots de la app) **NO va en la web** — se comparte 1:1 en privado usando el pitch deck de `don-chambas-hq/docs/comms/`.
 
 **Páginas actuales:**
-- `/` — slide de presentación: headline "Reclutamiento de personal para el sector restaurantero", slogan "¿Buscas jale o quien jale?", subtítulo "Don Chambas es la plataforma donde la comunicación entre negocios y candidatos fluye", CTA "Contáctanos". Watermark "DON" de marca en el fondo.
+- `/` — slide de presentación: lockup brush oficial (wordmark + tagline + sparkles), headline "Reclutamiento de personal para el **sector restaurantero**" (palabra con caja degradado), subtítulo "La plataforma donde la comunicación entre negocios y candidatos fluye", CTA "Contáctanos", tira de personajes. Watermark "DON" + sparkles animados en el fondo.
 - `/contacto` — email + derechos ARCO + ubicación. Sin piloto, sin WhatsApp CTA.
 - `/privacidad` — aviso LFPDPPP (borrador, pendiente revisión legal). Ancla `#eliminar-datos` para Meta.
 - `/terminos` — términos (borrador).
 - `opengraph-image`, `icon.svg`, `sitemap.ts`, `robots.ts`.
 
-**Estructura:** `src/app/*` (páginas), `src/components/` (`Nav`, `Footer`), `src/lib/config.ts` (contacto centralizado), `public/styles/` (`tokens.css` + `base.css` copiados de hq, `site.css` overrides).
+### Branding (rebrand 2026-06-27)
+El sitio aplica la identidad lúdica real de la marca (Manual Doberman + carpeta Drive `Branding Don chambas`):
+- **Fuentes** (alternativas libres de Google a las comerciales de marca): display **Baloo 2**, script **Caveat** (tagline/acentos), cuerpo **Nunito**. Cableadas en `src/app/layout.tsx` → tokens en `tokens.css`/`site.css`.
+- **Assets en `public/images/brand/`**: lockups oficiales SVG (`lockup-{white,navy,red}.svg`, wordmark brush + tagline + sparkles, fondo transparente, recortados del Manual) y `characters/char-*.png` (5 personajes line-art extraídos del `.ai`, fondo transparente).
+- **Color**: rojo es **co-primario** (no solo alerta); `--dc-red-logo #d31e1d` es el rojo vivo del wordmark. Tokens lúdicos: `--grad-warm`, `--brush-shadow`, `.highlight`, `.marker`.
+- **Componentes** (`src/components/`): `BrushWordmark` (lockup por variante de fondo), `CharacterStrip`, `Sparkle`.
+
+**Estructura:** `src/app/*` (páginas), `src/components/` (`Nav`, `Footer`, `BrushWordmark`, `CharacterStrip`, `Sparkle`), `src/lib/config.ts` (contacto centralizado), `public/styles/` (`tokens.css` + `base.css` + `site.css`), `public/images/brand/` (assets de marca).
 
 ### Requisitos de Meta (app WhatsApp Business `n8n-don-chambas`, App ID 2249880045750740)
 El sitio cubre los campos de la app: Privacy Policy URL → `/privacidad`, Terms URL → `/terminos`, Data Deletion URL → `/privacidad#eliminar-datos`. Ícono 1024×1024 generado (en el Escritorio del owner). Falta verificación de negocio (requiere razón social real).

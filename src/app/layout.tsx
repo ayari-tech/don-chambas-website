@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Baloo_2, Caveat, Nunito } from "next/font/google";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+// Display chunky/redondeada — sustituto libre al wordmark brush de marca
+const baloo = Baloo_2({
+  subsets: ["latin", "latin-ext"],
+  weight: ["500", "600", "700", "800"],
   variable: "--font-display-next",
   display: "swap",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+// Script a pincel — acentos manuscritos al estilo del tagline de marca
+const caveat = Caveat({
+  subsets: ["latin", "latin-ext"],
+  weight: ["500", "600", "700"],
+  variable: "--font-script-next",
+  display: "swap",
+});
+
+// Cuerpo redondeado y legible — marida con Baloo 2
+const nunito = Nunito({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-body-next",
   display: "swap",
 });
@@ -38,7 +48,7 @@ export default function RootLayout({
   return (
     <html
       lang="es-MX"
-      className={`${spaceGrotesk.variable} ${inter.variable}`}
+      className={`${baloo.variable} ${caveat.variable} ${nunito.variable}`}
     >
       <head>
         <link rel="stylesheet" href="/styles/tokens.css" />

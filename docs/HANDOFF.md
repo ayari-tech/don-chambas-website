@@ -8,6 +8,18 @@
 
 ---
 
+## 0. Rebrand lúdico (2026-06-27)
+
+Se aplicó la identidad real de marca (Manual Doberman + Drive `Branding Don chambas`):
+fuentes de marca vía alternativas libres de Google (**Baloo 2** display, **Caveat** script,
+**Nunito** cuerpo), **lockup brush oficial** en SVG (recortado del manual, fondo
+transparente, variantes white/navy/red en `public/images/brand/`), **5 personajes** line-art
+extraídos del `.ai` (`public/images/brand/characters/`), tokens lúdicos (`--grad-warm`,
+`--brush-shadow`, `.highlight`, `.marker`, rojo co-primario) y componentes nuevos
+`BrushWordmark` / `CharacterStrip` / `Sparkle`. Detalle de estado vivo en `CLAUDE.md` §1.1.
+
+---
+
 ## 1. Qué se hizo en esta sesión (2026-06-25 → 2026-06-27)
 
 Se construyó y desplegó desde cero el sitio público de Don Chambas, y luego se

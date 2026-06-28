@@ -13,7 +13,8 @@
   --dc-blue-900:    #04193d;  /* fondos oscuros profundos */
   --dc-orange:      #F49F08;  /* accent puntual — CTAs, highlights, eyebrows */
   --dc-orange-600:  #c87f06;  /* hover */
-  --dc-red:         #B23636;  /* SOLO alertas/error — no decorativo */
+  --dc-red:         #B23636;  /* CO-PRIMARIO de marca (logo/decorativo) + alertas */
+  --dc-red-logo:    #d31e1d;  /* rojo vivo del wordmark oficial (Doberman) */
   --dc-gray:        #DDDDDD;  /* backgrounds neutros */
   --dc-gray-100:    #F5F5F5;  /* surfaces clarísimas */
   --dc-gray-300:    #C4C4C4;
@@ -36,9 +37,10 @@
   --line-on-dark:   rgba(255, 255, 255, 0.18);
   --error:          var(--dc-red);
 
-  /* --------- Tipografía --------- */
-  --font-display:   "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-body:      "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* --------- Tipografía (alternativas libres a las fuentes de marca) --------- */
+  --font-display:   "Baloo 2", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-script:    "Caveat", "Comic Sans MS", cursive;
+  --font-body:      "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono:      ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
 
   /* --------- Escala tipográfica --------- */
@@ -79,6 +81,11 @@
   --shadow-sm: 0 1px 2px rgba(6, 39, 92, 0.06);
   --shadow-md: 0 4px 14px rgba(6, 39, 92, 0.10);
   --shadow-lg: 0 12px 36px rgba(6, 39, 92, 0.16);
+
+  /* --------- Marca lúdica (Doberman) --------- */
+  --grad-warm:    linear-gradient(170deg, var(--dc-orange) 0%, var(--dc-red-logo) 100%);
+  --brush-shadow: 3px 4px 0 rgba(6, 39, 92, 0.18);   /* sombra desplazada estilo wordmark */
+  --brush-shadow-dark: 3px 4px 0 rgba(0, 0, 0, 0.28);
 
   /* --------- Layout --------- */
   --max-w:     1100px;

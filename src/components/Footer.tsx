@@ -1,13 +1,14 @@
 import Link from "next/link";
+import BrushWordmark from "./BrushWordmark";
+import CharacterStrip from "./CharacterStrip";
 
 export default function Footer() {
   return (
     <footer>
+      <CharacterStrip size="sm" className="footer-characters" />
       <div className="wrap">
-        <div>
-          <p style={{ color: "var(--dc-white)", fontWeight: 600 }}>
-            DON CHAMBAS
-          </p>
+        <div className="footer-brand">
+          <BrushWordmark variant="navy" className="footer-wordmark" />
           <p style={{ marginTop: "8px" }}>
             © {new Date().getFullYear()} Don Chambas — Ciudad de México
           </p>

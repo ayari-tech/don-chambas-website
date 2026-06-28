@@ -5,8 +5,9 @@
 
 /* Next.js injects fonts as CSS variables; wire them into the token names */
 :root {
-  --font-display: var(--font-display-next, "Space Grotesk", -apple-system, sans-serif);
-  --font-body:    var(--font-body-next, "Inter", -apple-system, sans-serif);
+  --font-display: var(--font-display-next, "Baloo 2", -apple-system, sans-serif);
+  --font-script:  var(--font-script-next, "Caveat", cursive);
+  --font-body:    var(--font-body-next, "Nunito", -apple-system, sans-serif);
 }
 
 /* Single-link nav: keep "Contacto" visible on mobile too */
@@ -29,6 +30,80 @@
 }
 .hero.center .hero-ctas { justify-content: center; }
 
+/* ---------- Hero lockup (logo brush oficial) ---------- */
+.hero-lockup {
+  display: block;
+  width: min(560px, 84vw);
+  height: auto;
+  margin: 0 auto var(--sp-8);
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.28));
+}
+@media (max-width: 720px) {
+  .hero-lockup { margin-bottom: var(--sp-6); }
+}
+
+/* ---------- Sparkles decorativos del hero ---------- */
+.hero-sparkle {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.9;
+  animation: sparkle-twinkle 3.2s ease-in-out infinite;
+}
+.hero-sparkle.s1 { top: 14%; left: 12%; animation-delay: 0s; }
+.hero-sparkle.s2 { top: 22%; right: 14%; animation-delay: 0.8s; }
+.hero-sparkle.s3 { bottom: 26%; left: 18%; animation-delay: 1.6s; }
+@media (max-width: 720px) {
+  .hero-sparkle.s1 { top: 8%; left: 6%; }
+  .hero-sparkle.s2 { top: 12%; right: 7%; }
+  .hero-sparkle.s3 { display: none; }
+}
+@keyframes sparkle-twinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.85; }
+  50%      { transform: scale(1.18) rotate(8deg); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-sparkle { animation: none; }
+}
+
+/* ---------- Tira de personajes ---------- */
+.characters-strip {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 28px);
+  width: 100%;
+}
+.characters-strip img {
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.22));
+}
+.characters-strip.lg img { height: clamp(72px, 13vw, 150px); }
+.characters-strip.sm img { height: clamp(48px, 8vw, 84px); filter: none; }
+
+/* Banda inferior del hero, como las piezas de marca */
+.hero-characters {
+  margin-top: var(--sp-12);
+}
+@media (max-width: 720px) {
+  .hero-characters { margin-top: var(--sp-10); gap: 4px; }
+  /* en móvil mostramos 3 personajes para que no se apriete */
+  .hero-characters img:nth-child(4),
+  .hero-characters img:nth-child(5) { display: none; }
+}
+
+/* Footer: tira sutil sobre fondo navy-900 */
+.footer-characters {
+  margin-bottom: var(--sp-10);
+  opacity: 0.96;
+}
+@media (max-width: 560px) {
+  .footer-characters img:nth-child(4),
+  .footer-characters img:nth-child(5) { display: none; }
+}
+
 /* ---------- Nav CTAs ---------- */
 .nav-ctas {
   display: flex;
@@ -41,15 +116,19 @@
   padding: 8px var(--sp-5);
   border-radius: 999px;
   font-size: var(--fs-sm);
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   text-decoration: none;
   border-bottom: none;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s,
+    transform 0.12s ease, box-shadow 0.15s;
 }
+.btn:hover { transform: translateY(-2px) rotate(-1deg); }
+.btn:active { transform: translateY(0) rotate(0); }
 .btn-primary {
   background: var(--dc-orange);
   color: var(--dc-blue-900);
+  box-shadow: var(--brush-shadow-dark);
 }
 .btn-primary:hover {
   background: var(--dc-orange-600);

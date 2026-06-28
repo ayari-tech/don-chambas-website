@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Sparkle from "./Sparkle";
 
 export default function Nav() {
   return (
@@ -8,6 +9,7 @@ export default function Nav() {
           <Link href="/" className="brand plain">
             <span className="brand-name">
               DON <span className="accent">CHAMBAS</span>
+              <Sparkle size={14} color="var(--dc-red-logo)" className="brand-sparkle" />
             </span>
           </Link>
           <div className="nav-links">
