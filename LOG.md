@@ -11,6 +11,15 @@ Categorías: `dev`, `content`, `design`, `deploy`, `docs`, `planning`, `admin`.
 
 ## 2026-06-28
 
+- **Wordmark amarillo+rojo como brand del nav** (Claude · `design`, `dev`)
+  Alex subió recursos nuevos al Drive (`Branding Don chambas/Digital/Variaciones de logotipo/
+  Wordmark - solo nombre (PNG)/`): wordmarks "solo nombre" (sin tagline, con estrellitas, fondo
+  transparente, ~2600px). Sustituí el texto "DON CHAMBAS" del nav (arriba a la izq.) por la
+  variante `amarillo-sombra-roja` (relleno amarillo + sombra roja), optimizada a 353×160 PNG en
+  `public/images/brand/wordmark-amarillo-rojo.png`. Se quitó el `<Sparkle>` inline (el asset ya
+  trae estrellitas). Nuevo `.brand-logo` (48px / 42px en mobile). Verificado en `/`.
+  _Next: si se quiere, generar SVG de este wordmark para nitidez perfecta a cualquier escala._
+
 - **Correcciones al sitio desde Notion (TASK-257)** (Claude · `design`, `dev`)
   Ronda de fixes de UI/contenido pedidos por Alex en la task "Correcciones al sitio web":
   **Carreras** — las "Áreas en las que buscamos talento" pasan de cards a bullets con ícono
