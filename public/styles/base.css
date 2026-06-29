@@ -66,6 +66,15 @@ code, pre {
   letter-spacing: 0;
 }
 .brand img { width: 36px; height: 36px; }
+/* Wordmark "solo nombre" (amarillo + sombra roja) en el nav */
+.brand .brand-logo {
+  width: auto;
+  height: 48px;
+  display: block;
+}
+@media (max-width: 720px) {
+  .brand .brand-logo { height: 42px; }
+}
 .brand .brand-name {
   position: relative;
   color: var(--dc-white);
