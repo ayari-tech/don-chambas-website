@@ -3,12 +3,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
-import {
-  CONTACT_EMAIL,
-  PARTNERSHIPS_EMAIL,
-  CAREERS_EMAIL,
-  mailto,
-} from "@/lib/config";
+import { CONTACT_EMAIL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Contacto — Don Chambas",
@@ -44,45 +39,6 @@ export default function ContactoPage() {
                     <div className="method-body">
                       <b>Contacto general</b>
                       <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-                    </div>
-                  </li>
-                  <li>
-                    <span className="ic"><Icon name="bolt" size={22} /></span>
-                    <div className="method-body">
-                      <b>Programa piloto</b>
-                      <a href={`mailto:${PARTNERSHIPS_EMAIL}`}>
-                        {PARTNERSHIPS_EMAIL}
-                      </a>
-                    </div>
-                  </li>
-                  <li>
-                    <span className="ic"><Icon name="heart" size={22} /></span>
-                    <div className="method-body">
-                      <b>Únete al equipo</b>
-                      <a href={`mailto:${CAREERS_EMAIL}`}>{CAREERS_EMAIL}</a>
-                    </div>
-                  </li>
-                  <li>
-                    <span className="ic"><Icon name="shield" size={22} /></span>
-                    <div className="method-body">
-                      <b>Derechos ARCO (privacidad)</b>
-                      <a href={mailto("Ejercicio de derechos ARCO")}>
-                        Escríbenos con asunto "Derechos ARCO"
-                      </a>
-                    </div>
-                  </li>
-                  <li>
-                    <span className="ic"><Icon name="pin" size={22} /></span>
-                    <div className="method-body">
-                      <b>Ubicación</b>
-                      Ciudad de México, México
-                    </div>
-                  </li>
-                  <li>
-                    <span className="ic"><Icon name="clock" size={22} /></span>
-                    <div className="method-body">
-                      <b>Horario de respuesta</b>
-                      Lunes a viernes, 9:00–19:00 hrs (CDMX)
                     </div>
                   </li>
                 </ul>

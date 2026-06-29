@@ -50,17 +50,19 @@ export default function PilotoPage() {
               escucharte. Buscamos negocios que vivan fricciones en sus
               contrataciones:
             </p>
-            <div className="icon-grid">
+            <ul className="icon-bullets pain">
               {FRICTIONS.map((f) => (
-                <div className="icon-card pain" key={f.title}>
-                  <div className="ic">
-                    <Icon name={f.icon} size={24} />
+                <li key={f.title}>
+                  <span className="ic">
+                    <Icon name={f.icon} size={20} />
+                  </span>
+                  <div>
+                    <b>{f.title}</b>
+                    <p>{f.desc}</p>
                   </div>
-                  <h3>{f.title}</h3>
-                  <p>{f.desc}</p>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
             <p className="lead">
               Queremos hablar contigo para idear juntos soluciones efectivas. En
               Don Chambas nos entusiasman las posibilidades que abren la

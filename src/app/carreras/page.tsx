@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
-import { CAREERS_EMAIL, mailto } from "@/lib/config";
+import { CAREERS_EMAIL } from "@/lib/config";
 
 const AREAS = [
   { icon: "trending-up", name: "Marketing" },
@@ -41,16 +41,16 @@ export default function CarrerasPage() {
               especial, hablemos.
             </p>
             <h4>Áreas en las que buscamos talento</h4>
-            <div className="icon-grid">
+            <ul className="icon-bullets">
               {AREAS.map((a) => (
-                <div className="icon-card" key={a.name}>
-                  <div className="ic">
-                    <Icon name={a.icon} size={24} />
-                  </div>
-                  <h3>{a.name}</h3>
-                </div>
+                <li key={a.name}>
+                  <span className="ic">
+                    <Icon name={a.icon} size={20} />
+                  </span>
+                  <b>{a.name}</b>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
 
@@ -83,22 +83,8 @@ export default function CarrerasPage() {
               <h3>
                 ¿Sientes que tienes algo especial que aportar?
               </h3>
-              <p>
-                Cuéntanos quién eres y qué te hace único. Leemos cada mensaje.
-              </p>
-              <a
-                href={mailto(
-                  "Quiero ayudar a construir Don Chambas",
-                  undefined,
-                  CAREERS_EMAIL,
-                )}
-                className="btn btn-primary"
-                style={{ display: "inline-block", marginTop: "var(--sp-5)" }}
-              >
-                Escríbenos →
-              </a>
-              <p style={{ marginTop: "var(--sp-4)", fontSize: "var(--fs-sm)" }}>
-                o directo a{" "}
+              <p style={{ marginTop: "var(--sp-4)" }}>
+                Escríbenos a{" "}
                 <a href={`mailto:${CAREERS_EMAIL}`} className="accent">
                   {CAREERS_EMAIL}
                 </a>

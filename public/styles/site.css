@@ -231,6 +231,46 @@
   font-size: var(--fs-sm);
 }
 
+/* ---------- Icon bullets (áreas, fricciones en lista) ---------- */
+.icon-bullets {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-5) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+.icon-bullets li {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: flex-start;
+}
+.icon-bullets .ic {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(244, 159, 8, 0.14);
+  color: var(--dc-orange);
+}
+.icon-bullets.pain .ic {
+  background: rgba(178, 54, 54, 0.12);
+  color: var(--dc-red);
+}
+.icon-bullets b {
+  display: block;
+  color: var(--dc-blue);
+  font-weight: 700;
+}
+.icon-bullets p {
+  margin: 2px 0 0;
+  color: var(--ink-dim);
+  font-size: var(--fs-sm);
+}
+
 /* ---------- Contact methods (con íconos) ---------- */
 .contact-methods {
   list-style: none;

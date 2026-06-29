@@ -20,8 +20,6 @@ export default function Footer({
           </p>
         </div>
         <div className="footer-links">
-          <Link href="/carreras">Ayúdanos a construir Don Chambas</Link>
-          <Link href="/piloto">Participa en el programa piloto</Link>
           <div className="footer-legal">
             <Link href="/privacidad">Aviso de privacidad</Link>
             <Link href="/terminos">Términos de uso</Link>
