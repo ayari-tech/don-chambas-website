@@ -8,7 +8,7 @@ export default function Nav() {
           <Link href="/" className="brand plain" aria-label="Don Chambas — inicio">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/brand/wordmark-amarillo-rojo.png"
+              src="/images/brand/wordmark-amarillo-blanco.png"
               alt="Don Chambas"
               className="brand-logo"
               draggable={false}
