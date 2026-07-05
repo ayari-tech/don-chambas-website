@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import CharacterStrip from "@/components/CharacterStrip";
 import Icon from "@/components/Icon";
 import Watermark from "@/components/Watermark";
 import { PARTNERSHIPS_EMAIL, mailto } from "@/lib/config";
@@ -10,11 +11,6 @@ const FRICTIONS = [
     icon: "search",
     title: "Encontrar candidatos",
     desc: "Dificultad para dar con el perfil adecuado.",
-  },
-  {
-    icon: "heart",
-    title: "Retener al talento",
-    desc: "El equipo rota más de lo que quisieras.",
   },
   {
     icon: "calendar-x",
@@ -41,6 +37,7 @@ export default function PilotoPage() {
             <p className="lead">
               Construyamos juntos la solución a tus contrataciones.
             </p>
+            <CharacterStrip size="sm" className="page-hero-characters" />
           </div>
         </header>
 
@@ -65,22 +62,29 @@ export default function PilotoPage() {
                 </li>
               ))}
             </ul>
-            <p className="lead">
-              Queremos hablar contigo para idear juntos soluciones efectivas. En
-              Don Chambas nos entusiasman las posibilidades que abren la
-              automatización y la inteligencia artificial para resolver estos
-              retos.
-            </p>
-            <p className="quote" style={{ marginBottom: 0 }}>
-              Si estás en la industria restaurantera y tienes ideas de cómo se
-              podría automatizar o integrar con IA algún proceso, nos gustaría
-              hablar contigo.
+            <p className="lead" style={{ marginBottom: 0 }}>
+              Queremos sentarnos contigo a entender de primera mano los
+              problemas que enfrentas y cómo es hoy tu proceso de
+              reclutamiento. Ese aprendizaje es lo que nos permite diseñar una
+              solución que de verdad funcione para negocios como el tuyo.
             </p>
           </div>
         </section>
 
         <section>
           <div className="wrap tight">
+            <blockquote className="quote">
+              &ldquo;La gente agenda entrevistas pero no llega y no avisa;
+              agenda día de prueba y no llega; agenda primer día contratado y
+              no llega; ya no vuelve al segundo o tercer día.&rdquo;
+              <cite>— Dueña de restaurante, CDMX</cite>
+            </blockquote>
+            <blockquote className="quote">
+              &ldquo;Tengo 4 vacantes al mismo tiempo y pagué $3,500 para
+              recibir candidatos 5 días. Y es tardadísimo yo filtrar
+              todo.&rdquo;
+              <cite>— Dueña de restaurante, CDMX</cite>
+            </blockquote>
             <div className="cta-final">
               <h3>¿Te suena familiar?</h3>
               <p>
@@ -108,7 +112,7 @@ export default function PilotoPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer showCharacters={false} />
     </>
   );
 }

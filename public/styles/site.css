@@ -39,6 +39,32 @@
   .hero-lockup { margin-bottom: var(--sp-6); }
 }
 
+/* ---------- Mascota Don Chambas junto al headline ---------- */
+.hero-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(var(--sp-5), 4vw, var(--sp-10));
+}
+.hero-row h1 {
+  text-align: left;
+  margin: 0;
+}
+.hero-mascota {
+  flex-shrink: 0;
+  width: clamp(170px, 24vw, 260px);
+  height: auto;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.25));
+}
+@media (max-width: 720px) {
+  .hero-row {
+    flex-direction: column;
+    gap: var(--sp-5);
+  }
+  .hero-row h1 { text-align: center; }
+  .hero-mascota { width: clamp(150px, 42vw, 190px); }
+}
+
 /* ---------- Sparkles decorativos del hero ---------- */
 .hero-sparkle {
   position: absolute;
@@ -89,6 +115,16 @@
   /* en móvil mostramos 3 personajes para que no se apriete */
   .hero-characters img:nth-child(4),
   .hero-characters img:nth-child(5) { display: none; }
+}
+
+/* Tira del crew dentro del page-hero de páginas interiores */
+.page-hero-characters {
+  margin-top: var(--sp-8);
+  justify-content: flex-start;
+}
+@media (max-width: 560px) {
+  .page-hero-characters img:nth-child(4),
+  .page-hero-characters img:nth-child(5) { display: none; }
 }
 
 /* Footer: tira sutil sobre fondo navy-900 */

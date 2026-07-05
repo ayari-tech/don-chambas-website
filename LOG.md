@@ -9,6 +9,23 @@ Categorías: `dev`, `content`, `design`, `deploy`, `docs`, `planning`, `admin`.
 
 ---
 
+## 2026-07-04
+
+- **Fixes al sitio desde el ticket de Notion "Fixes al website de don chambas"** (Claude · `design`, `dev`, `content`)
+  Ronda de fixes pedidos por Alex en el ticket #1 de la DB Tickets de Don Chambas HQ: (1) **Landing** —
+  se agregó la mascota Don Chambas (mesero retro con megáfono y charola) junto al headline, en fila
+  flex (`.hero-row`/`.hero-mascota`, stack en móvil). El asset salió del Drive
+  (`Branding Don chambas/Personajes para presentaciones (PNG)/donchambas_personaje_mesero-mascota_rojo.png`),
+  optimizado con PIL a 720px/41KB → `public/images/brand/characters/don-chambas.png`. (2) **Páginas
+  interiores** (piloto, carreras, contacto) — la tira del crew se movió arriba: `<CharacterStrip size="sm">`
+  dentro del `page-hero` (`.page-hero-characters`) y `Footer showCharacters={false}` para no duplicar.
+  (3) **Piloto** — se quitó el bullet "Retener al talento"; se reemplazó el párrafo/quote de
+  "automatizar con IA" por copy sobre entender problemas y procesos de reclutamiento de los negocios;
+  y en "¿Te suena familiar?" se agregaron 2 quotes reales de validación (no-shows en cadena y costo de
+  Indeed/filtrado, de los decks pitch/clientes-mvp, validación 2026-05-09) atribuidos como "Dueña de
+  restaurante, CDMX". Verificado en desktop (landing/piloto/carreras/contacto); `npm run build` ✓.
+  _Next: commitear y push a `main` cuando Alex lo pida; marcar el ticket como Done en Notion._
+
 ## 2026-06-28
 
 - **Watermarks de marca + variante de wordmark sombra-blanca + adenda al manual** (Claude · `design`, `dev`, `docs`)

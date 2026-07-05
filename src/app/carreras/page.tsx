@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import CharacterStrip from "@/components/CharacterStrip";
 import Icon from "@/components/Icon";
 import Watermark from "@/components/Watermark";
 import { CAREERS_EMAIL } from "@/lib/config";
@@ -31,6 +32,7 @@ export default function CarrerasPage() {
             <p className="lead">
               Buscamos personas excepcionales con ganas de hacer algo grande.
             </p>
+            <CharacterStrip size="sm" className="page-hero-characters" />
           </div>
         </header>
 
@@ -95,7 +97,7 @@ export default function CarrerasPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer showCharacters={false} />
     </>
   );
 }

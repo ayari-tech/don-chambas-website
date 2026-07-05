@@ -24,10 +24,19 @@ export default function LandingPage() {
         <div className="wrap">
           <BrushWordmark variant="navy" className="hero-lockup" />
 
-          <h1>
-            Reclutamiento de personal para el{" "}
-            <span className="accent">sector restaurantero</span>
-          </h1>
+          <div className="hero-row">
+            <h1>
+              Reclutamiento de personal para el{" "}
+              <span className="accent">sector restaurantero</span>
+            </h1>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/brand/characters/don-chambas.png"
+              alt="Don Chambas, el mesero de la marca, corriendo con megáfono y charola"
+              className="hero-mascota"
+              draggable={false}
+            />
+          </div>
 
           <CharacterStrip size="lg" className="hero-characters" />
         </div>

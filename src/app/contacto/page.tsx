@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import CharacterStrip from "@/components/CharacterStrip";
 import Icon from "@/components/Icon";
 import { CONTACT_EMAIL } from "@/lib/config";
 
@@ -19,6 +20,7 @@ export default function ContactoPage() {
           <div className="wrap">
             <span className="eyebrow">Contacto</span>
             <h1>Hablemos</h1>
+            <CharacterStrip size="sm" className="page-hero-characters" />
           </div>
         </header>
 
@@ -59,7 +61,7 @@ export default function ContactoPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer showCharacters={false} />
     </>
   );
 }
