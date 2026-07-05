@@ -11,6 +11,11 @@ Categorías: `dev`, `content`, `design`, `deploy`, `docs`, `planning`, `admin`.
 
 ## 2026-07-04
 
+- **Nota manuscrita en el hero de la landing** (Claude · `design`, `content`)
+  "Estamos construyendo Don Chambas. Nos emociona tenerte aquí." entre el headline y la tira del
+  crew — Caveat naranja, rotación -1°, una sola línea (`.hero-note`). Pedido por Alex; verificado
+  en local y en producción tras el deploy. (commit `5786661`)
+
 - **Fixes al sitio desde el ticket de Notion "Fixes al website de don chambas"** (Claude · `design`, `dev`, `content`)
   Ronda de fixes pedidos por Alex en el ticket #1 de la DB Tickets de Don Chambas HQ: (1) **Landing** —
   se agregó la mascota Don Chambas (mesero retro con megáfono y charola) junto al headline, en fila
