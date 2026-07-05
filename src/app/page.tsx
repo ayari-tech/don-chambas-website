@@ -38,6 +38,10 @@ export default function LandingPage() {
             />
           </div>
 
+          <p className="hero-note">
+            Estamos construyendo Don Chambas. Nos emociona tenerte aquí.
+          </p>
+
           <CharacterStrip size="lg" className="hero-characters" />
         </div>
       </div>

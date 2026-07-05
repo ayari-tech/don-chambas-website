@@ -65,6 +65,21 @@
   .hero-mascota { width: clamp(150px, 42vw, 190px); }
 }
 
+/* ---------- Nota manuscrita del hero ---------- */
+.hero-note {
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-size: clamp(var(--fs-xl), 3vw, var(--fs-2xl));
+  line-height: 1.2;
+  color: var(--dc-orange);
+  margin: var(--sp-8) auto 0;
+  max-width: 760px;
+  transform: rotate(-1deg);
+}
+@media (max-width: 720px) {
+  .hero-note { margin-top: var(--sp-6); }
+}
+
 /* ---------- Sparkles decorativos del hero ---------- */
 .hero-sparkle {
   position: absolute;
