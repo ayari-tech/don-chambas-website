@@ -4,7 +4,7 @@
 > **Creado:** 2026-06-27 · **Owner:** Alex
 > Documento de traspaso de la sesión inicial de construcción del sitio. Cuando todos
 > los pendientes de §4 estén cerrados, archivar este documento (ver protocolo en
-> `CLAUDE.md` §5).
+> `CLAUDE.md` §1.2).
 
 ---
 

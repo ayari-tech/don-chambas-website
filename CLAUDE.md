@@ -68,6 +68,31 @@ Un handoff archivado es registro histórico; el estado vivo siempre se refleja e
 
 ---
 
+## 1.3 Bitácora y decisiones (protocolo de logs)
+
+El repo sigue el patrón de trackeo para agentes del ecosistema (igual que `don-chambas-hq`,
+`out-running-hq`, `bitacora-de-viajes-hq`). Tres registros, cada uno con un propósito:
+
+- **`LOG.md`** (raíz) — **bitácora de actividad continua**, cronológico inverso. El "qué/por qué"
+  narrativo de cada trabajo significativo, con un `_Next:_`. Es lo que un agente nuevo lee para
+  saber qué pasó últimamente.
+- **`DECISIONS.md`** (raíz) — **decisiones no obvias** con rationale, formato `DEC-WXXX` (la `W` es
+  de website, para no chocar con los `DEC-XXX` de `don-chambas-hq`).
+- **`docs/HANDOFF.md`** — **traspaso detallado de una sesión** (snapshot completo). Sigue vigente;
+  se archiva por el protocolo de §1.2 cuando se cierran sus pendientes.
+
+**Cuándo loguear:** al cerrar trabajo significativo (dev / contenido / diseño / deploy / docs),
+usa el skill **`/log <qué se hizo>`**. Si hubo una decisión no obvia, **`/log --decision "rationale" <qué se hizo>`**
+(también la registra en `DECISIONS.md`, auto-incrementando el `DEC-WXXX`). El skill vive en
+`.claude/skills/log-activity/SKILL.md`.
+
+**Relación con git y el ecosistema:** el **git log** sigue siendo el registro canónico de cambios de
+código; `LOG.md` aporta el contexto y el siguiente paso que el commit no captura. Lo de
+**negocio/producto** va a `don-chambas-hq/LOG.md`; lo del **sitio** va a este `LOG.md`.
+Categorías: `dev`, `content`, `design`, `deploy`, `docs`, `planning`, `admin`.
+
+---
+
 ## 2. Fuentes externas (Notion + Google Drive)
 
 - **Notion** — vía el conector de cuenta claude.ai (`mcp__claude_ai_Notion__*`). PM y documentación del proyecto en las DBs de Don Chambas (IDs y schema en `don-chambas-hq/CLAUDE.md` §3).
