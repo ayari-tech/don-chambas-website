@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Don Chambas",
     description:
-      "Reclutamiento de personal para el sector restaurantero. ¿Buscas jale o quien jale?",
+      "Reclutamiento de personal para el sector restaurantero. ¿Buscas jale o quien jale pa’ tu restaurante?",
     locale: "es_MX",
     type: "website",
     siteName: "Don Chambas",
