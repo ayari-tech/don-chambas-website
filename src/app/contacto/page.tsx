@@ -53,7 +53,7 @@ export default function ContactoPage() {
                   <Link
                     href="/piloto"
                     className="btn btn-primary"
-                    style={{ display: "inline-block", marginTop: "var(--sp-4)" }}
+                    style={{ marginTop: "var(--sp-4)" }}
                   >
                     Ver programa piloto →
                   </Link>

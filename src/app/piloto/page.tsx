@@ -98,8 +98,8 @@ export default function PilotoPage() {
                   undefined,
                   PARTNERSHIPS_EMAIL,
                 )}
-                className="btn btn-primary"
-                style={{ display: "inline-block", marginTop: "var(--sp-5)" }}
+                className="btn btn-cta"
+                style={{ marginTop: "var(--sp-5)" }}
               >
                 Participar en el piloto →
               </a>

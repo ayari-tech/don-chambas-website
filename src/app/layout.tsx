@@ -52,7 +52,7 @@ export default function RootLayout({
     >
       <head>
         <link rel="stylesheet" href="/styles/tokens.css" />
-        <link rel="stylesheet" href="/styles/base.css" />
+        <link rel="stylesheet" href="/styles/componentes.css" />
         <link rel="stylesheet" href="/styles/site.css" />
       </head>
       <body>{children}</body>

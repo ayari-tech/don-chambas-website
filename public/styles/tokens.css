@@ -1,96 +1,113 @@
 /* ==========================================================================
-   Don Chambas — Design tokens
-   Source: Manual de Marca Don Chambas (Doberman Studio, 2026)
-   Drive: https://drive.google.com/file/d/1khz3Fm6Aq5l_sUETcAoyHtP_YvJbdnuu/view
+   Don Chambas — Design tokens (GENERADO — no editar a mano)
+   Fuente: don-chambas-brand/tokens/tokens.json — regenerar: uv run builder/build.py
+   Regla C3: componentes/pantallas SOLO usan --font-display/--font-body.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  /* --------- Paleta canónica (Doberman) --------- */
-  --dc-blue:        #06275C;  /* DOMINANTE — fondos hero, headers, énfasis */
-  --dc-blue-700:    #0a3578;  /* hover/variantes */
-  --dc-blue-900:    #04193d;  /* fondos oscuros profundos */
-  --dc-orange:      #F49F08;  /* accent puntual — CTAs, highlights, eyebrows */
-  --dc-orange-600:  #c87f06;  /* hover */
-  --dc-red:         #B23636;  /* CO-PRIMARIO de marca (logo/decorativo) + alertas */
-  --dc-red-logo:    #d31e1d;  /* rojo vivo del wordmark oficial (Doberman) */
-  --dc-gray:        #DDDDDD;  /* backgrounds neutros */
-  --dc-gray-100:    #F5F5F5;  /* surfaces clarísimas */
-  --dc-gray-300:    #C4C4C4;
-  --dc-gray-600:    #6B7280;
-  --dc-gray-800:    #2A2F3D;
-  --dc-white:       #FFFFFF;
-  --dc-black:       #000000;
+  /* Paleta (manual §2.2, C1/C2) */
+  --dc-primary: #06275C;
+  --dc-primary-hover: #0A3578;
+  --dc-primary-deep: #04193D;
+  --dc-accent: #F49F08;
+  --dc-accent-hover: #C87F06;
+  --dc-brand-red: #D31E1D;
+  --dc-error: #B23636;
+  --dc-neutral-0: #FFFFFF;
+  --dc-neutral-100: #F5F5F5;
+  --dc-neutral-200: #DDDDDD;
+  --dc-neutral-300: #C4C4C4;
+  --dc-neutral-600: #6B7280;
+  --dc-neutral-800: #2A2F3D;
+  --dc-black: #000000;
+  --dc-success: #1E6B34;
+  --dc-success-bg: #EAF5EC;
+  --dc-warning-bg: #FBF3E2;
+  --dc-error-bg: #F9ECEC;
 
-  /* --------- Semánticos --------- */
-  --bg:             var(--dc-gray-100);
-  --bg-alt:         var(--dc-white);
-  --surface:        var(--dc-white);
-  --surface-dark:   var(--dc-blue);
-  --ink:            var(--dc-blue-900);
-  --ink-on-dark:    var(--dc-white);
-  --ink-dim:        var(--dc-gray-600);
-  --ink-muted:      var(--dc-gray-300);
-  --accent:         var(--dc-orange);
-  --line:           rgba(6, 39, 92, 0.12);
-  --line-on-dark:   rgba(255, 255, 255, 0.18);
-  --error:          var(--dc-red);
+  /* Semánticos */
+  --bg: var(--dc-neutral-100);
+  --surface: var(--dc-neutral-0);
+  --surface-dark: var(--dc-primary);
+  --ink: var(--dc-primary-deep);
+  --ink-on-dark: var(--dc-neutral-0);
+  --ink-dim: var(--dc-neutral-600);
+  --ink-muted: var(--dc-neutral-300);
+  --line: rgba(6, 39, 92, 0.12);
+  --line-on-dark: rgba(255, 255, 255, 0.18);
 
-  /* --------- Tipografía (alternativas libres a las fuentes de marca) --------- */
-  --font-display:   "Baloo 2", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-script:    "Caveat", "Comic Sans MS", cursive;
-  --font-body:      "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono:      ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
+  /* Tipografía (C3: intercambiable SOLO aquí) */
+  --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-script: Caveat, cursive;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
-  /* --------- Escala tipográfica --------- */
-  --fs-xs:    12px;
-  --fs-sm:    14px;
-  --fs-base:  16px;
-  --fs-md:    17px;
-  --fs-lg:    19px;
-  --fs-xl:    22px;
-  --fs-2xl:   28px;
-  --fs-3xl:   36px;
-  --fs-4xl:   48px;
-  --fs-5xl:   60px;
-  --lh-tight: 1.1;
-  --lh-snug:  1.25;
-  --lh-base:  1.55;
-  --lh-loose: 1.7;
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-base: 16px;
+  --fs-md: 17px;
+  --fs-lg: 19px;
+  --fs-xl: 22px;
+  --fs-2xl: 28px;
+  --fs-3xl: 36px;
+  --fs-4xl: 48px;
+  --fs-5xl: 60px;
+  --lh-tight: 1.1; --lh-snug: 1.25; --lh-base: 1.55; --lh-loose: 1.7;
 
-  /* --------- Espaciado --------- */
-  --sp-1:   4px;
-  --sp-2:   8px;
-  --sp-3:   12px;
-  --sp-4:   16px;
-  --sp-5:   20px;
-  --sp-6:   24px;
-  --sp-8:   32px;
-  --sp-10:  40px;
-  --sp-12:  48px;
-  --sp-16:  64px;
-  --sp-20:  80px;
-  --sp-24:  96px;
-
-  /* --------- Radios / sombras --------- */
-  --r-sm:   6px;
-  --r-md:   10px;
-  --r-lg:   14px;
-  --r-xl:   20px;
+  /* Espaciado / radios / sombras */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-pill: 999px;
   --shadow-sm: 0 1px 2px rgba(6, 39, 92, 0.06);
   --shadow-md: 0 4px 14px rgba(6, 39, 92, 0.10);
   --shadow-lg: 0 12px 36px rgba(6, 39, 92, 0.16);
 
-  /* --------- Marca lúdica (Doberman) --------- */
-  --grad-warm:    linear-gradient(170deg, var(--dc-orange) 0%, var(--dc-red-logo) 100%);
-  --brush-shadow: 3px 4px 0 rgba(6, 39, 92, 0.18);   /* sombra desplazada estilo wordmark */
-  --brush-shadow-dark: 3px 4px 0 rgba(0, 0, 0, 0.28);
+  /* Motion */
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* --------- Layout --------- */
-  --max-w:     1100px;
+  /* Z / layout */
+  --z-base: 1;
+  --z-raised: 10;
+  --z-sticky: 50;
+  --z-dropdown: 100;
+  --z-modal: 1000;
+  --z-toast: 10000;
   --max-w-tight: 880px;
+  --max-w: 1100px;
+  --max-w-wide: 1280px;
 
-  /* --------- Brand asset: tagline canónico --------- */
-  /* Uso en HTML como <span class="dc-tagline">¿Buscas jale o quien jale pa´ tu restaurante?</span> */
+  /* Canal WhatsApp (constantes del cliente, no marca) */
+  --wa-bg: #ECE5DD;
+  --wa-header: #075E54;
+  --wa-out: #DCF8C6;
+  --wa-in: #FFFFFF;
+  --wa-link: #027EB5;
+  --wa-meta: #667781;
+
+  /* Presentación (C7 — decks, NO producto) */
+  --deck-cream: #EFEDE6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur-base: 0ms; --dur-slow: 0ms; }
 }

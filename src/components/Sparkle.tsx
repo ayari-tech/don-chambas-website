@@ -6,7 +6,7 @@ import type { CSSProperties } from "react";
  */
 export default function Sparkle({
   size = 28,
-  color = "var(--dc-orange)",
+  color = "var(--dc-accent)",
   className,
   style,
 }: {

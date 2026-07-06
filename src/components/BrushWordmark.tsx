@@ -7,7 +7,7 @@ const SRC = {
 } as const;
 
 const ALT =
-  "Don Chambas — ¿Buscas jale o quien jale pa´ tu restaurante?";
+  "Don Chambas — ¿Buscas jale o quien jale pa’ tu restaurante?";
 
 /**
  * Lockup oficial de marca (wordmark brush + tagline + sparkles) en SVG.
