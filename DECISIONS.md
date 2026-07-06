@@ -7,6 +7,40 @@ Numeración **`DEC-WXXX`** (W = website) para no chocar con la secuencia `DEC-XX
 
 ---
 
+## 2026-07-06
+
+### DEC-W005: Adoptar los derivados de marca tal cual y retirar los tokens lúdicos legacy
+
+**Decisión:** `public/styles/tokens.css` y `componentes.css` son copias generadas de
+`don-chambas-brand/dist/derivados/` y **nunca se editan a mano** (única transformación documentada:
+quitar el bloque `@import` dev de Google Fonts, autorizado por el header del propio archivo, porque
+las fuentes vienen de `next/font`). Se actualizan con commits `sync brand vX`. Los tokens lúdicos
+del rebrand anterior (`--grad-warm`, `--brush-shadow*`, `.highlight`, `.marker`, `.dc-tagline`) se
+retiran: no existen en los tokens canónicos y el hero usa acento ámbar plano + `.btn-cta`.
+
+**Contexto:** Alex pidió alinear el sitio con el manual de marca v1 del nuevo repo canónico
+`don-chambas-brand` (que ya listaba "Website pendiente — restyle C3"). Se le mostró una comparación
+visual (Artifact) del sitio actual vs. los tokens canónicos y eligió: quitar el gradiente, adoptar
+derivados tal cual, mantener CTA mailto mientras no haya WhatsApp, y enlazar Instagram `@don_chambas`.
+
+**Rationale:**
+- Una sola fuente de verdad: la gobernanza del brand repo manda consumir derivados generados, no
+  mantener copias divergentes a mano — el drift estructural desaparece.
+- El sitio queda 100 % derivable de la marca; cambios de identidad futuros = regenerar + `sync brand vX`.
+- Los tokens lúdicos eran drift legacy no canonizado; conservarlos habría requerido un DEC en el
+  brand repo que Alex decidió no abrir.
+
+**Implicaciones inmediatas:**
+- `base.css` desaparece (fusionado en `site.css`, lo único editable a mano); botones canónicos
+  (`.btn-primary` navy, `.btn-cta` ámbar); fuentes Space Grotesk + Inter (cierra el restyle C3).
+- Assets con nombres canónicos copiados literal del brand repo.
+
+**Supersede:** DEC-W003 (Baloo 2/Nunito y tokens lúdicos).
+
+**Relacionada con:** DEC-W001, DEC-W002.
+
+---
+
 ## 2026-06-28
 
 ### DEC-W004: Convención de logs del repo (LOG.md + DECISIONS.md + skill `/log`)

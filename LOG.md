@@ -9,6 +9,27 @@ Categorías: `dev`, `content`, `design`, `deploy`, `docs`, `planning`, `admin`.
 
 ---
 
+## 2026-07-06
+
+- **Alineación completa con `don-chambas-brand` (sync brand v1)** (Claude · `design`, `dev`, `docs`)
+  Auditoría sitio ↔ manual de marca (con comparación visual en Artifact para decidir) y migración en
+  7 commits: (1) restyle **C3** — Space Grotesk + Inter + Caveat 600 vía `next/font` (salen Baloo 2 /
+  Nunito, cierra el pendiente del brand repo); (2) watermark de los heros pasa de texto "DONDON…" en
+  fuente viva (prohibido) al **tile oficial** vía `<Watermark>`, opacidad 4 %; (3) **sync brand v1** —
+  `tokens.css` y `componentes.css` copiados de `dist/derivados/`, `base.css` fusionado en `site.css`
+  con renombres canónicos (`--dc-primary`/`--dc-accent`/`--dc-error`/`--dc-brand-red`), CSS muerto
+  podado, tokens lúdicos retirados (`--grad-warm`, `--brush-shadow`, `.highlight`, `.marker`), botones
+  canónicos (`.btn-cta` ámbar en piloto y nuevo CTA único del hero, mailto mientras no haya WhatsApp),
+  fixes de contraste (ámbar ya no es texto sobre claro) y apóstrofe C4 (`pa'` U+2019); (4) assets
+  canónicos copiados literal (`personaje_*_rojo`, `mascota_color`, `mascota-busto_blanco`,
+  `wordmark_amarillo-blanco` full-res; cajera y lavaloza corrigen los mal llamados anfitriona/lavaplatos);
+  (5) favicon = **busto de la mascota** y OG image = **lockup oficial embebido** (antes wordmark
+  tecleado, prohibido); (6) **Instagram `@don_chambas`** en footer (§7.4); (7) docs. Verificado:
+  `npm run build` ✓ por commit, greps de vars legacy/apóstrofe en cero, pase visual en las 4 páginas
+  (fuentes, watermark, botones, footer) y render real de favicon/OG. (commits `f2ac6d4`…)
+  _Next: push a `main` para deploy; avisar en el LOG de `don-chambas-brand` que el restyle C3 del
+  website quedó cerrado; cablear "Mándanos un wats" cuando exista número real._
+
 ## 2026-07-04
 
 - **Nota manuscrita en el hero de la landing** (Claude · `design`, `content`)

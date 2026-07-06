@@ -12,7 +12,7 @@ Para contexto completo de negocio, decisiones de producto, wireframes y branding
 
 ---
 
-## 1.1 Estado actual (2026-06-27)
+## 1.1 Estado actual (2026-07-06)
 
 **Vivo en:** https://don-chambas-website.vercel.app/ (dominio `donchambas.com.mx` aún SIN conectar).
 
@@ -20,22 +20,40 @@ Para contexto completo de negocio, decisiones de producto, wireframes y branding
 El sitio se redujo a propósito a una **pantalla de presentación** + legales, para **no dar información que sirva de inspiración a competidores**. Lo sensible (moats, modelo de pricing, trayectoria fintech, roadmap, pasos del producto, screenshots de la app) **NO va en la web** — se comparte 1:1 en privado usando el pitch deck de `don-chambas-hq/docs/comms/`.
 
 **Páginas actuales:**
-- `/` — slide de presentación: lockup brush oficial (wordmark + tagline + sparkles), headline "Reclutamiento de personal para el **sector restaurantero**" (palabra con caja degradado), subtítulo "La plataforma donde la comunicación entre negocios y candidatos fluye", CTA "Contáctanos", tira de personajes. Watermark "DON" + sparkles animados en el fondo.
-- `/piloto` — programa piloto para negocios restauranteros (fricciones de contratación). CTA → `partnerships@donchambas.com.mx`.
+- `/` — slide de presentación: lockup brush oficial (wordmark + tagline + sparkles), headline "Reclutamiento de personal para el **sector restaurantero**" (acento ámbar), nota manuscrita, CTA único "Contáctanos" (mailto; pasará a "Mándanos un wats" cuando exista número real, §7.4), mascota `mascota_color`, tira de personajes. Watermark de tile oficial + sparkles animados en el fondo.
+- `/piloto` — programa piloto para negocios restauranteros (fricciones de contratación). CTA `.btn-cta` → `partnerships@donchambas.com.mx`.
 - `/carreras` — "Ayúdanos a construir Don Chambas": reclutamiento de talento (marketing, tech, diseño de producto). CTA → `careers@donchambas.com.mx`.
 - `/contacto` — email + derechos ARCO + ubicación. Sin WhatsApp CTA.
 - `/privacidad` — aviso LFPDPPP (borrador, pendiente revisión legal). Ancla `#eliminar-datos` para Meta.
 - `/terminos` — términos (borrador).
-- `opengraph-image`, `icon.svg`, `sitemap.ts`, `robots.ts`.
+- `opengraph-image` (lockup oficial embebido), `icon.tsx` (busto de la mascota sobre navy), `sitemap.ts`, `robots.ts`.
 
-### Branding (rebrand 2026-06-27)
-El sitio aplica la identidad lúdica real de la marca (Manual Doberman + carpeta Drive `Branding Don chambas`):
-- **Fuentes** (alternativas libres de Google a las comerciales de marca): display **Baloo 2**, script **Caveat** (tagline/acentos), cuerpo **Nunito**. Cableadas en `src/app/layout.tsx` → tokens en `tokens.css`/`site.css`.
-- **Assets en `public/images/brand/`**: lockups oficiales SVG (`lockup-{white,navy,red}.svg`, wordmark brush + tagline + sparkles, fondo transparente, recortados del Manual) y `characters/char-*.png` (5 personajes line-art extraídos del `.ai`, fondo transparente).
-- **Color**: rojo es **co-primario** (no solo alerta); `--dc-red-logo #d31e1d` es el rojo vivo del wordmark. Tokens lúdicos: `--grad-warm`, `--brush-shadow`, `.highlight`, `.marker`.
-- **Componentes** (`src/components/`): `BrushWordmark` (lockup por variante de fondo), `CharacterStrip`, `Sparkle`.
+### Branding (sync brand v1, 2026-07-06 — DEC-W005)
+El sitio consume la marca canónica del repo **`don-chambas-brand`** (manual v1 + tokens):
+- **Sync de derivados:** `public/styles/tokens.css` y `componentes.css` son copias de
+  `don-chambas-brand/dist/derivados/` — **NUNCA se editan a mano**. Para actualizar:
+  `sed '/Dev local/,/fonts.googleapis.com/d' ../don-chambas-brand/dist/derivados/tokens.css > public/styles/tokens.css`
+  (quita el `@import` dev, autorizado por el header del archivo) + `cp` literal de `componentes.css`,
+  en un commit `sync brand vX`. Lo único editable a mano es `site.css`.
+- **Fuentes canónicas (C3):** display **Space Grotesk** (500/700), cuerpo **Inter**, script **Caveat 600**
+  (solo acentos de marketing). Cargadas vía `next/font` en `src/app/layout.tsx` → variables
+  `--font-*-next` cableadas a los tokens al inicio de `site.css`.
+- **Color:** roles canónicos — `--dc-primary` navy dominante, `--dc-accent` ámbar (**nunca texto sobre
+  fondo claro**), `--dc-brand-red #D31E1D` (decorativo marketing: sparkles), `--dc-error #B23636`
+  (solo funcional). Los tokens lúdicos viejos (`--grad-warm`, `--brush-shadow`, `.highlight`, `.marker`)
+  se retiraron (DEC-W005).
+- **Botones canónicos:** `.btn-primary` navy sólido, `.btn-secondary` borde navy, `.btn-cta` ámbar
+  (un CTA crítico por pantalla).
+- **Assets en `public/images/brand/`**: copias literales de `don-chambas-brand/assets/` con nombres
+  canónicos — lockups SVG, `wordmark_amarillo-blanco.png` (nav), `personaje_*_rojo.png` (banda de
+  oficios: mesero-clasico, cocinero, cajera, bartender, lavaloza), `mascota_color.png`,
+  `mascota-busto_blanco.png` (favicon), tiles de watermark (opacidad 4 % en web; rango del manual 3–6 %).
+- **Reglas duras:** el wordmark jamás se reconstruye con fuentes vivas (favicon/OG/watermark usan
+  assets); tagline con apóstrofe U+2019 (`pa'`); sin `font-family` ni hex de marca hardcodeados
+  fuera de tokens (excepción: `icon.tsx`/`opengraph-image.tsx`, que no leen CSS vars).
+- **Componentes** (`src/components/`): `BrushWordmark` (lockup por variante de fondo), `CharacterStrip`, `Sparkle`, `Watermark`.
 
-**Estructura:** `src/app/*` (páginas), `src/components/` (`Nav`, `Footer`, `BrushWordmark`, `CharacterStrip`, `Sparkle`), `src/lib/config.ts` (contacto centralizado), `public/styles/` (`tokens.css` + `base.css` + `site.css`), `public/images/brand/` (assets de marca).
+**Estructura:** `src/app/*` (páginas), `src/components/` (`Nav`, `Footer`, `BrushWordmark`, `CharacterStrip`, `Sparkle`, `Watermark`, `Icon`), `src/lib/config.ts` (contacto + Instagram centralizados), `public/styles/` (`tokens.css` + `componentes.css` synced + `site.css` local), `public/images/brand/` (assets de marca).
 
 ### Requisitos de Meta (app WhatsApp Business `n8n-don-chambas`, App ID 2249880045750740)
 El sitio cubre los campos de la app: Privacy Policy URL → `/privacidad`, Terms URL → `/terminos`, Data Deletion URL → `/privacidad#eliminar-datos`. Ícono 1024×1024 generado (en el Escritorio del owner). Falta verificación de negocio (requiere razón social real).
@@ -46,6 +64,7 @@ El sitio cubre los campos de la app: Privacy Policy URL → `/privacidad`, Terms
 - [ ] Razón social / entidad legal (para legales y verificación de negocio de Meta)
 - [ ] Subir el ícono 1024 a la app de Meta
 - [ ] Cifras de mercado y nombres del equipo: actualmente NO se muestran en el sitio mínimo; viven en el material privado.
+- [ ] CTA "Mándanos un wats" (§7.4): cablearlo cuando exista el número real de WhatsApp Business (`WHATSAPP_NUMBER` en `src/lib/config.ts` es placeholder).
 
 ### Dev / deploy
 - `npm run dev` (localhost:3000) · `npm run build` · push a `main` → Vercel redeploya solo (~1 min).
