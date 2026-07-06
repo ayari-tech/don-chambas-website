@@ -390,12 +390,12 @@ code, pre {
 .watermark--dark {
   /* tile blanco para fondos navy/oscuros */
   background-image: url(/images/brand/watermark-tile-blanco.png);
-  opacity: 0.06;
+  opacity: 0.04;
 }
 .watermark--light {
   /* tile navy para fondos claros */
   background-image: url(/images/brand/watermark-tile-navy.png);
-  opacity: 0.05;
+  opacity: 0.04;
 }
 @media (max-width: 720px) {
   .watermark { background-size: 220px auto; }
