@@ -15,7 +15,12 @@ export const PARTNERSHIPS_EMAIL = "partnerships@donchambas.com.mx";
 export const CAREERS_EMAIL = "careers@donchambas.com.mx";
 
 // PLACEHOLDER — número de WhatsApp Business (formato internacional, sin +).
+// Cuando exista el número real, el CTA principal del sitio pasa de mailto a
+// "Mándanos un wats" (manual de marca §7.4).
 export const WHATSAPP_NUMBER = "525500000000";
+
+export const INSTAGRAM_HANDLE = "don_chambas";
+export const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 
 export const SITE_URL = "https://donchambas.com.mx";
 

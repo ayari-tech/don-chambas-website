@@ -49,6 +49,13 @@ const PATHS: Record<string, ReactNode> = {
       <polyline points="3.5 7 12 13 20.5 7" />
     </>
   ),
+  instagram: (
+    <>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="16.8" cy="7.2" r="0.7" fill="currentColor" stroke="none" />
+    </>
+  ),
   pin: (
     <>
       <path d="M12 21C12 21 5 14 5 9A7 7 0 0 1 19 9C19 14 12 21 12 21Z" />

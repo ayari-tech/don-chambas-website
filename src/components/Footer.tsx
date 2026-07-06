@@ -1,6 +1,8 @@
 import Link from "next/link";
 import BrushWordmark from "./BrushWordmark";
 import CharacterStrip from "./CharacterStrip";
+import Icon from "./Icon";
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/config";
 
 export default function Footer({
   showCharacters = true,
@@ -20,6 +22,14 @@ export default function Footer({
           </p>
         </div>
         <div className="footer-links">
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener"
+            className="footer-instagram"
+          >
+            <Icon name="instagram" size={18} />@{INSTAGRAM_HANDLE}
+          </a>
           <div className="footer-legal">
             <Link href="/privacidad">Aviso de privacidad</Link>
             <Link href="/terminos">Términos de uso</Link>

@@ -646,6 +646,11 @@ footer .footer-links > a {
   border-bottom: none;
 }
 footer .footer-links > a:hover { color: var(--dc-accent); }
+footer .footer-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
 footer .footer-legal {
   display: flex;
   gap: var(--sp-4);
