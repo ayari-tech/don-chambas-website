@@ -61,7 +61,7 @@ code, pre {
   align-items: center;
   gap: var(--sp-3);
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: var(--fs-xl);
   letter-spacing: 0;
   flex-shrink: 0;
@@ -264,7 +264,7 @@ code, pre {
   position: absolute;
   inset: 0;
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 150px;
   line-height: 0.9;
   color: rgba(255, 255, 255, 0.03);
@@ -278,7 +278,7 @@ code, pre {
 .page-hero h1 {
   font-family: var(--font-display);
   font-size: var(--fs-4xl);
-  font-weight: 800;
+  font-weight: 700;
   line-height: var(--lh-tight);
   color: var(--dc-white);
   margin: var(--sp-4) 0 var(--sp-4);

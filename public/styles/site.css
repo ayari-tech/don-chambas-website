@@ -5,9 +5,9 @@
 
 /* Next.js injects fonts as CSS variables; wire them into the token names */
 :root {
-  --font-display: var(--font-display-next, "Baloo 2", -apple-system, sans-serif);
+  --font-display: var(--font-display-next, "Space Grotesk", -apple-system, sans-serif);
   --font-script:  var(--font-script-next, "Caveat", cursive);
-  --font-body:    var(--font-body-next, "Nunito", -apple-system, sans-serif);
+  --font-body:    var(--font-body-next, "Inter", -apple-system, sans-serif);
 }
 
 /* Presentation-slide hero: centered, altura natural para que la tira de
@@ -68,7 +68,7 @@
 /* ---------- Nota manuscrita del hero ---------- */
 .hero-note {
   font-family: var(--font-script);
-  font-weight: 700;
+  font-weight: 600;
   font-size: clamp(var(--fs-xl), 3vw, var(--fs-2xl));
   line-height: 1.2;
   color: var(--dc-orange);
