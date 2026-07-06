@@ -1,14 +1,15 @@
 const CHARACTERS = [
-  { src: "/images/brand/characters/char-mesero.png", alt: "Mesero" },
-  { src: "/images/brand/characters/char-cocinero.png", alt: "Cocinero" },
-  { src: "/images/brand/characters/char-anfitriona.png", alt: "Anfitriona" },
-  { src: "/images/brand/characters/char-bartender.png", alt: "Bartender" },
-  { src: "/images/brand/characters/char-lavaplatos.png", alt: "Lavaplatos" },
+  { src: "/images/brand/personaje_mesero-clasico_rojo.png", alt: "Mesero" },
+  { src: "/images/brand/personaje_cocinero_rojo.png", alt: "Cocinero" },
+  { src: "/images/brand/personaje_cajera_rojo.png", alt: "Cajera" },
+  { src: "/images/brand/personaje_bartender_rojo.png", alt: "Bartender" },
+  { src: "/images/brand/personaje_lavaloza_rojo.png", alt: "Lavaloza" },
 ] as const;
 
 /**
- * Tira de personajes ilustrados de la marca (mesero, cocinero, anfitriona,
- * bartender, lavaplatos). Elemento decorativo del hero y el footer.
+ * "Banda de oficios" de la marca (mesero, cocinero, cajera, bartender,
+ * lavaloza — assets canónicos de don-chambas-brand). Decorativa; nunca
+ * sustituye a la mascota ni funciona como íconos de UI.
  */
 export default function CharacterStrip({
   size = "lg",

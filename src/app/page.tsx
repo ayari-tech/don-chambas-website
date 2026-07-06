@@ -34,7 +34,7 @@ export default function LandingPage() {
             </h1>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/brand/characters/don-chambas.png"
+              src="/images/brand/mascota_color.png"
               alt="Don Chambas, el mesero de la marca, corriendo con megáfono y charola"
               className="hero-mascota"
               draggable={false}
