@@ -158,22 +158,6 @@ code, pre {
   position: relative;
   overflow: hidden;
 }
-.hero::before {
-  content: "DON DONDON DONDONDON DONDONDON DON DONDONDON DONDONDON DON DONDONDONDON DON";
-  position: absolute;
-  inset: 0;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 200px;
-  line-height: 0.9;
-  color: rgba(255, 255, 255, 0.03);
-  letter-spacing: -0.03em;
-  pointer-events: none;
-  word-break: break-all;
-  padding: var(--sp-6);
-  text-align: center;
-  user-select: none;
-}
 .hero .wrap { position: relative; z-index: 1; }
 .eyebrow {
   display: inline-block;
@@ -246,7 +230,6 @@ code, pre {
   .hero { padding: var(--sp-12) 0 var(--sp-10); }
   .hero h1 { font-size: var(--fs-2xl); }
   .hero-sub { font-size: var(--fs-lg); }
-  .hero::before { font-size: 110px; }
 }
 
 /* ---------- Page hero (páginas internas) ---------- */
@@ -257,22 +240,6 @@ code, pre {
   color: var(--ink-on-dark);
   padding: var(--sp-12) 0 var(--sp-10);
   border-bottom: 4px solid var(--dc-orange);
-}
-/* Watermark "DON" de marca, igual que el hero principal */
-.page-hero::before {
-  content: "DON DONDON DONDONDON DONDONDON DON DONDONDON DONDONDON DON";
-  position: absolute;
-  inset: 0;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 150px;
-  line-height: 0.9;
-  color: rgba(255, 255, 255, 0.03);
-  letter-spacing: -0.03em;
-  pointer-events: none;
-  word-break: break-all;
-  padding: var(--sp-6);
-  user-select: none;
 }
 .page-hero > .wrap { position: relative; z-index: 1; }
 .page-hero h1 {

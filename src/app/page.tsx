@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import BrushWordmark from "@/components/BrushWordmark";
 import CharacterStrip from "@/components/CharacterStrip";
 import Sparkle from "@/components/Sparkle";
+import Watermark from "@/components/Watermark";
 
 export const metadata: Metadata = {
   title: "Don Chambas — Reclutamiento de personal para el sector restaurantero",
@@ -16,7 +17,8 @@ export default function LandingPage() {
     <>
       <Nav />
 
-      <div className="hero center">
+      <div className="hero center has-watermark">
+        <Watermark tone="dark" />
         <Sparkle size={40} color="var(--dc-red-logo)" className="hero-sparkle s1" />
         <Sparkle size={26} color="var(--dc-orange)" className="hero-sparkle s2" />
         <Sparkle size={32} color="var(--dc-orange)" className="hero-sparkle s3" />

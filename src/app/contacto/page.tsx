@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CharacterStrip from "@/components/CharacterStrip";
 import Icon from "@/components/Icon";
+import Watermark from "@/components/Watermark";
 import { CONTACT_EMAIL } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -16,7 +17,8 @@ export default function ContactoPage() {
     <>
       <Nav />
       <main>
-        <header className="page-hero">
+        <header className="page-hero has-watermark">
+          <Watermark tone="dark" />
           <div className="wrap">
             <span className="eyebrow">Contacto</span>
             <h1>Hablemos</h1>

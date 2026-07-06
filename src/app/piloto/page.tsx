@@ -30,7 +30,8 @@ export default function PilotoPage() {
     <>
       <Nav />
       <main>
-        <header className="page-hero">
+        <header className="page-hero has-watermark">
+          <Watermark tone="dark" />
           <div className="wrap">
             <span className="eyebrow">Programa piloto</span>
             <h1>Participa en el programa piloto</h1>

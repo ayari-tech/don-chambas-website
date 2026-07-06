@@ -25,7 +25,8 @@ export default function CarrerasPage() {
     <>
       <Nav />
       <main>
-        <header className="page-hero">
+        <header className="page-hero has-watermark">
+          <Watermark tone="dark" />
           <div className="wrap">
             <span className="eyebrow">Únete al equipo</span>
             <h1>Ayúdanos a construir Don Chambas</h1>
