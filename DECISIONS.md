@@ -7,6 +7,40 @@ Numeración **`DEC-WXXX`** (W = website) para no chocar con la secuencia `DEC-XX
 
 ---
 
+## 2026-07-07
+
+### DEC-W006: Analítica con PostHog en modo cookieless (sin banner) y eventos declarativos por data-attributes
+
+**Decisión:** El sitio se instrumenta con **PostHog** (`posthog-js`) en modo cookieless:
+`persistence: "sessionStorage"` (nada persiste entre visitas → no requiere banner de
+consentimiento), `autocapture: false` (solo eventos explícitos) y pageviews manuales por cambio
+de ruta. Los CTAs se marcan en los server components con `data-analytics-event` +
+`data-analytics-cta`; un único componente cliente global (`src/components/Analytics.tsx`) escucha
+los clics delegados y deriva el **medio** (`mailto`/`whatsapp`) del `href` al momento del clic.
+Todo es **no-op si `NEXT_PUBLIC_POSTHOG_KEY` no está definida** (dev y previews sin key).
+
+**Contexto:** 2026-07-07 — primera pieza del plan de analytics de Don Chambas (proyecto
+«Analytics — Telemetría de producto y website» en Notion). El producto principal es un agente de
+WhatsApp, así que la métrica que importa del sitio es la **atribución cruzada**: página → clic de
+CTA de contacto → registro en WhatsApp. Los CTAs hoy son `mailto:` (número WA placeholder).
+
+**Rationale:**
+- PostHog unifica website + agente WA (server-side, futuro `app/telemetria.py`) + front en una
+  sola herramienta; free tier 1M eventos/mes sobra para el piloto.
+- Cookieless evita el banner en un sitio de marketing mínimo y simplifica el aviso de privacidad.
+- Derivar el medio del `href` en el clic hace que el evento sobreviva el cambio de mailto a
+  `wa.me` (§7.4 del manual) sin tocar las páginas.
+- Data-attributes mantienen las páginas como server components (sin convertir CTAs en client
+  components).
+
+**Implicaciones:** para activar hace falta `NEXT_PUBLIC_POSTHOG_KEY` (y opcional
+`NEXT_PUBLIC_POSTHOG_HOST`, default US Cloud) en Vercel — TASK-305 en Notion. La taxonomía
+canónica de eventos vive en `don-chambas-app/spec/telemetria.md`.
+
+**Relacionada con:** DEC-051 de `don-chambas-hq` (plan de analytics de 4 capas).
+
+---
+
 ## 2026-07-06
 
 ### DEC-W005: Adoptar los derivados de marca tal cual y retirar los tokens lúdicos legacy

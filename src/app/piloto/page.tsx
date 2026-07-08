@@ -100,12 +100,19 @@ export default function PilotoPage() {
                 )}
                 className="btn btn-cta"
                 style={{ marginTop: "var(--sp-5)" }}
+                data-analytics-event="cta_contacto_click"
+                data-analytics-cta="piloto_participar"
               >
                 Participar en el piloto →
               </a>
               <p style={{ marginTop: "var(--sp-4)", fontSize: "var(--fs-sm)" }}>
                 o directo a{" "}
-                <a href={`mailto:${PARTNERSHIPS_EMAIL}`} className="accent">
+                <a
+                  href={`mailto:${PARTNERSHIPS_EMAIL}`}
+                  className="accent"
+                  data-analytics-event="cta_contacto_click"
+                  data-analytics-cta="piloto_email_directo"
+                >
                   {PARTNERSHIPS_EMAIL}
                 </a>
               </p>

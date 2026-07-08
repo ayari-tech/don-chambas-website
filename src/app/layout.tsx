@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Caveat, Inter } from "next/font/google";
+import Analytics from "@/components/Analytics";
 
 // Display canónica de marca (manual §2.3, resolución C3)
 const spaceGrotesk = Space_Grotesk({
@@ -55,7 +56,10 @@ export default function RootLayout({
         <link rel="stylesheet" href="/styles/componentes.css" />
         <link rel="stylesheet" href="/styles/site.css" />
       </head>
-      <body>{children}</body>
+      <body>
+        <Analytics />
+        {children}
+      </body>
     </html>
   );
 }

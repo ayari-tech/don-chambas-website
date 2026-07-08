@@ -9,6 +9,17 @@ Categorías: `dev`, `content`, `design`, `deploy`, `docs`, `planning`, `admin`.
 
 ---
 
+## 2026-07-07
+
+- **Instrumentación de analytics con PostHog cookieless** (Claude · `dev`, `docs`)
+  Se agrega `posthog-js` + `src/components/Analytics.tsx` (cliente global en `layout.tsx`):
+  pageviews por cambio de ruta y evento `cta_contacto_click` (props: `cta`, `medio`, `destino`,
+  `pagina`) en los 5 CTAs de contacto (hero home, piloto ×2, carreras, contacto) marcados con
+  `data-analytics-event`/`data-analytics-cta`. Modo cookieless (`sessionStorage`, sin banner),
+  `autocapture` off, y no-op sin `NEXT_PUBLIC_POSTHOG_KEY` — activar la key en Vercel es
+  TASK-305 en Notion. Verificado: `npm run build` ✓. Ver DEC-W006; parte del proyecto
+  «Analytics — Telemetría de producto y website» (`don-chambas-hq` DEC-051).
+
 ## 2026-07-06
 
 - **Alineación completa con `don-chambas-brand` (sync brand v1)** (Claude · `design`, `dev`, `docs`)

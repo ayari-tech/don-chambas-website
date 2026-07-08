@@ -37,7 +37,13 @@ export default function ContactoPage() {
                     <span className="ic"><Icon name="mail" size={22} /></span>
                     <div className="method-body">
                       <b>Contacto general</b>
-                      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+                      <a
+                        href={`mailto:${CONTACT_EMAIL}`}
+                        data-analytics-event="cta_contacto_click"
+                        data-analytics-cta="contacto_email_general"
+                      >
+                        {CONTACT_EMAIL}
+                      </a>
                     </div>
                   </li>
                 </ul>

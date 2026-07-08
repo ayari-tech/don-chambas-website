@@ -90,7 +90,12 @@ export default function CarrerasPage() {
               </h3>
               <p style={{ marginTop: "var(--sp-4)" }}>
                 Escríbenos a{" "}
-                <a href={`mailto:${CAREERS_EMAIL}`} className="accent">
+                <a
+                  href={`mailto:${CAREERS_EMAIL}`}
+                  className="accent"
+                  data-analytics-event="cta_contacto_click"
+                  data-analytics-cta="carreras_email"
+                >
                   {CAREERS_EMAIL}
                 </a>
               </p>

@@ -46,7 +46,12 @@ export default function LandingPage() {
           </p>
 
           <div className="hero-ctas">
-            <a href={mailto("Hola Don Chambas")} className="btn btn-cta">
+            <a
+              href={mailto("Hola Don Chambas")}
+              className="btn btn-cta"
+              data-analytics-event="cta_contacto_click"
+              data-analytics-cta="home_contactanos"
+            >
               Contáctanos
             </a>
           </div>
