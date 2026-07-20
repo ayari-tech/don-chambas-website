@@ -114,7 +114,8 @@ Categorías: `dev`, `content`, `design`, `deploy`, `docs`, `planning`, `admin`.
 
 ## 2. Fuentes externas (Notion + Google Drive)
 
-- **Notion** — vía el conector de cuenta claude.ai (`mcp__claude_ai_Notion__*`). PM y documentación del proyecto en las DBs de Don Chambas (IDs y schema en `don-chambas-hq/CLAUDE.md` §3).
+- **PM** — el product management del sitio vive en el repo padre **`don-chambas-hq`**, en `pm/` (backend git AS-02, skill `/pm`; DEC-054/055/056 de hq): proyecto `PROJ-10 — Website — Sitio público Don Chambas`, producto `PROD-2`. Notion ya NO es el PM de este repo.
+- **Notion** — vía el conector de cuenta claude.ai (`mcp__claude_ai_Notion__*`). Documentación y el lado operations/marketing/sales en las DBs de Don Chambas (IDs y schema en `don-chambas-hq/CLAUDE.md` §3 y §3 bis).
 - **Google Drive** — la carpeta `Don Chambas` del Drive personal se autoriza para lectura local agregando su ruta a `.claude/settings.local.json` (no versionado) bajo `permissions.additionalDirectories`:
   `~/<tu Drive personal>/My Drive/Don Chambas`
   Útil para el diseño del sitio: contiene `wireframes & mockups`, material de identidad de marca y `documents`. Assets de marca adicionales viven en `don-chambas-hq/docs/comms/` (logo `assets/images/logo-don.svg`, `tokens.css`, copy en `narrativa-don-chambas-v1.md`).
@@ -132,6 +133,6 @@ Categorías: `dev`, `content`, `design`, `deploy`, `docs`, `planning`, `admin`.
 
 ## 4. Links
 
-- **Proyecto hq:** https://github.com/ablascoa/don-chambas-hq
-- **App (backend):** https://github.com/ablascoa/don-chambas-app
-- **Notion Home:** https://www.notion.so/32d666f0254781aa83a2cf791bd0856a
+- **Repo padre (PM + negocio):** https://github.com/ayari-tech/don-chambas-hq — el PM de este repo vive en su `pm/` (PROJ-10)
+- **App (backend):** https://github.com/ayari-tech/don-chambas-app
+- **Notion Home (workspace institucional):** https://app.notion.com/p/3914faa91871804a8f5dce3d90dc414c
