@@ -114,7 +114,7 @@ Categorías: `dev`, `content`, `design`, `deploy`, `docs`, `planning`, `admin`.
 
 ## 2. Fuentes externas (Notion + Google Drive)
 
-- **PM** — el product management del sitio vive en el repo padre **`don-chambas-hq`**, en `pm/` (backend git AS-02, skill `/pm`; DEC-054/055/056 de hq): proyecto `PROJ-10 — Website — Sitio público Don Chambas`, producto `PROD-2`. Notion ya NO es el PM de este repo.
+- **PM** — el product management del sitio vive en **Notion** (workspace institucional Don Chambas — DEC-058 de `don-chambas-hq`, 2026-07-22): proyecto `PROJ-10 — Website — Sitio público Don Chambas`, producto `PROD-2`. El `pm/` de `don-chambas-hq` quedó como snapshot histórico congelado.
 - **Notion** — vía el conector de cuenta claude.ai (`mcp__claude_ai_Notion__*`). Documentación y el lado operations/marketing/sales en las DBs de Don Chambas (IDs y schema en `don-chambas-hq/CLAUDE.md` §3 y §3 bis).
 - **Google Drive** — la carpeta `Don Chambas` del Drive personal se autoriza para lectura local agregando su ruta a `.claude/settings.local.json` (no versionado) bajo `permissions.additionalDirectories`:
   `~/<tu Drive personal>/My Drive/Don Chambas`
@@ -133,6 +133,6 @@ Categorías: `dev`, `content`, `design`, `deploy`, `docs`, `planning`, `admin`.
 
 ## 4. Links
 
-- **Repo padre (PM + negocio):** https://github.com/ayari-tech/don-chambas-hq — el PM de este repo vive en su `pm/` (PROJ-10)
+- **Repo padre (negocio):** https://github.com/ayari-tech/don-chambas-hq — el PM de este repo vive en Notion (PROJ-10; DEC-058 de hq — su `pm/` es snapshot histórico congelado)
 - **App (backend):** https://github.com/ayari-tech/don-chambas-app
 - **Notion Home (workspace institucional):** https://app.notion.com/p/3914faa91871804a8f5dce3d90dc414c
